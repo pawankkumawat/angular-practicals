@@ -1,0 +1,16 @@
+<h2>Strategy Pattern</h2>
+<mat-slide-toggle
+color="primary"
+[checked]="isChecked"
+(change)="toggleHandler($event.checked)"
+>
+Compress Images
+</mat-slide-toggle>
+
+<input  
+  type="file"
+  accept="image/*"
+  multiple=""
+  id="file"
+  (change)="uploadFile($event.target)"
+/>

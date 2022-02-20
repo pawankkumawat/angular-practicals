@@ -1,0 +1,12 @@
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate" ></mat-progress-bar>
+    </ng-template>
+    <div mat-dialog-content *ngIf=" data$ | async as data else  loading">
+        <mat-form-field appearance="fill">
+            <mat-label>Text</mat-label>
+            <input matInput [value]="data">
+        </mat-form-field>
+    </div>
+    <div mat-dialog-actions>
+        <button mat-button mat-dialog-close cdkFocusInitial>Close</button>
+    </div>

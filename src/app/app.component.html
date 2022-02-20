@@ -1,0 +1,44 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar color="primary" class="example-toolbar">
+    <button mat-icon-button (click)="snav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="example-app-name">Angular Practicals</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56">
+      <mat-nav-list>
+        <!-- <button mat-raised-button color="primary">Primary</button> -->
+        <a mat-list-item (click)="onRouteClick(nav.value,nav.text)" *ngFor="let nav of fillerNav">{{nav.text}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <p class="main-content-cls">
+        <!-- <app-when-use-higher-order-opeartors></app-when-use-higher-order-opeartors> -->
+        <!-- <app-callback-hell></app-callback-hell> -->
+        <!-- <app-ng-container></app-ng-container> -->
+        <!-- <app-ng-container-example></app-ng-container-example> -->
+        <!-- <app-unsub-observable-one></app-unsub-observable-one> -->
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <ng-container *ngIf="routeData$ |async as routeData">
+              <mat-card-title>{{routeData.text}}</mat-card-title>
+            </ng-container>
+            <mat-card-subtitle></mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <router-outlet></router-outlet>
+          </mat-card-content>
+          <mat-card-actions>
+            <!-- <button mat-button>LIKE</button>
+                <button mat-button>SHARE</button> -->
+          </mat-card-actions>
+        </mat-card>
+      </p>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

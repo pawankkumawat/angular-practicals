@@ -1,0 +1,22 @@
+<form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Text</mat-label>
+        <input matInput placeholder="Text" formControlName="Text">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DateCreated</mat-label>
+        <input matInput placeholder="Ex. Pizza" formControlName="DateCreated">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DateModified</mat-label>
+        <input matInput placeholder="Ex. Pizza" formControlName="DateModified">
+    </mat-form-field>
+    <div>
+        <mat-checkbox formControlName="IsActive" class="example-margin">Check me!</mat-checkbox>
+    </div>
+</form>
+<div>
+    <button mat-raised-button color="primary">Save</button>
+    <button mat-raised-button color="primary">Discard</button>
+    <button mat-raised-button color="primary">Delete</button>
+</div>

@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  body{
+    font-family: 'Lato', sans-serif;
+    color: #202020;
+  }
+  
+  p{
+    display: none;
+  }
+  
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    overflow: hidden;
+    
+   td, th{
+      border-top: 1px solid #ECF0F1;
+      padding: 10px;
+    }
+    
+    td{
+      border-left: 1px solid #ECF0F1;
+      border-right: 1px solid #ECF0F1;
+    }
+    
+    th{
+      background-color: #ca90ca;
+    }
+    
+    tr:nth-of-type(even) td{
+      background-color: lighten(#424042, 35%);
+    }
+    
+    .total{
+      th{
+        background-color: #ca90ca;
+      }
+      
+      td{
+        text-align: right;
+        font-weight: 700;
+        background-color: #ca90ca;
+      }
+    }
+  }
+  
+    .mobile-header{
+      display: none;
+    }
+  
+  @media only screen and (max-width: 760px){
+    p{
+      display: block;
+      font-weight: bold;
+    }
+    
+    table{
+      tr{
+        td:not(:first-child), th:not(:first-child), td:not(.total-val){
+          display: none;
+        }
+        
+        &:nth-of-type(even) td:first-child{
+          background-color: lighten(#4ECDC4, 35%);
+        }
+        &:nth-of-type(odd) td:first-child{
+          background-color: white;
+        }
+        
+        &:nth-of-type(even) td:not(:first-child){
+          background-color: white;
+        }
+        
+        th:first-child{
+          width: 100%;
+          display:block;
+        }
+        
+        th:not(:first-child){
+          width: 40%;
+          transition: transform 0.4s ease-out;
+          transform:translateY(-9999px);
+          position: relative;
+          z-index: -1;
+        }
+        
+        td:not(:first-child){
+          transition: transform 0.4s ease-out;
+          transform:translateY(-9999px);
+          width: 60%;
+          position: relative;
+          z-index: -1;
+        }
+        
+        td:first-child{
+          display: block;
+          cursor: pointer;
+        }
+        
+        &.total th{
+          width: 25%;
+          display: inline-block;
+        }
+        
+        td.total-val{
+          display: inline-block;
+          transform: translateY(0);
+          width: 75%;
+        }
+      }
+    }
+  }
+  
+  @media only screen and (max-width: 300px){
+    table{
+      tr{
+        th:not(:first-child){
+          width: 50%;
+          font-size: 14px;
+        }
+        
+        td:not(:first-child){
+          width: 50%;
+          font-size: 14px;
+        }
+      }
+    }
+  }

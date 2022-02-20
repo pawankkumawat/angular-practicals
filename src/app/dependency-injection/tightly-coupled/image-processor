@@ -1,0 +1,11 @@
+
+
+
+
+// export class CompressImageProcessor  {
+//   constructor() {
+//   }
+//   compressAndProcessFiles(filesArray: File[]): void {
+//     console.log('Processing with Compression');
+//   }
+// }
