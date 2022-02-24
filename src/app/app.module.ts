@@ -13,24 +13,22 @@ import { UnsubObsModule } from './unsub-obs/unsub-obs.module';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { DesignPatternsModule } from './design-patterns/design-patterns.module';
 import { BranchingModule } from './branching/branching.module';
-import { DependencyInjectionModule } from './dependency-injection/dependency-injection.module';
 import { MastersModule } from './masters/masters.module';
 import { RxjsModule } from './rxjs/rxjs.module';
 import { SearchTypeAheadModule } from './search-type-ahead/search-type-ahead.module';
-import { RouterModule, Routes } from '@angular/router';
-import { WhenUseHigherOrderOpeartorsComponent } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors/when-use-higher-order-opeartors.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
+
 
 
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routeslist),
+    RouterModule.forRoot(routeslist,{preloadingStrategy:NoPreloading}),
     BrowserAnimationsModule,
     HttpClientModule,
     AllMaterialModule,
@@ -41,10 +39,9 @@ import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
     DashboardModule,
     DesignPatternsModule,
     BranchingModule,
-    DependencyInjectionModule,
     MastersModule,
     RxjsModule,
-    SearchTypeAheadModule
+    SearchTypeAheadModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

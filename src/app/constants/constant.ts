@@ -59,6 +59,11 @@ export const Routes = [
     text: 'Refactoring -2',
     value: 'branching2',
   },
+  {
+    text: 'Lazy',
+    value: 'lazy',
+  },
+  
 ];
 
 export const BranchingDataObj: BranchingData[] = [
@@ -84,4 +89,21 @@ export const BranchingDataObj: BranchingData[] = [
   },
 ];
 
-export const RAPID_API_KEY = "Replace Your API Key"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export const RAPID_API_KEY = "a7c3d8be1dmsha7f85716a325b57p19b334jsn4031c04421df"

@@ -10,19 +10,12 @@
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
       <mat-nav-list>
-        <!-- <button mat-raised-button color="primary">Primary</button> -->
         <a mat-list-item (click)="onRouteClick(nav.value,nav.text)" *ngFor="let nav of fillerNav">{{nav.text}}</a>
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <p class="main-content-cls">
-        <!-- <app-when-use-higher-order-opeartors></app-when-use-higher-order-opeartors> -->
-        <!-- <app-callback-hell></app-callback-hell> -->
-        <!-- <app-ng-container></app-ng-container> -->
-        <!-- <app-ng-container-example></app-ng-container-example> -->
-        <!-- <app-unsub-observable-one></app-unsub-observable-one> -->
-
         <mat-card class="example-card">
           <mat-card-header>
             <ng-container *ngIf="routeData$ |async as routeData">
@@ -34,8 +27,6 @@
             <router-outlet></router-outlet>
           </mat-card-content>
           <mat-card-actions>
-            <!-- <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button> -->
           </mat-card-actions>
         </mat-card>
       </p>
