@@ -1,18 +1,2 @@
-<mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="search" #search>
-</mat-form-field>
-<!-- 
-<mat-form-field appearance="fill">
-    <mat-label>State</mat-label>
-    <mat-select>
-        <mat-option *ngFor="let state of states" [value]="state.id">
-            {{state.text}}
-        </mat-option>
-    </mat-select>
-</mat-form-field> -->
-<mat-list role="list">
-    <ng-container *ngIf="data$ | async as states">
-        <mat-list-item *ngFor="let state of states" role="listitem"> {{state.text}}</mat-list-item>
-    </ng-container>
-</mat-list>
+<input type="text" #search>
+<div *ngFor="let state of States">{{state.text}}</div>

@@ -8,9 +8,13 @@ import { WhenUseHigherOrderOpeartorsComponent } from './when-use-higher-order-op
 
 export const routeslist: Routes = [
 
+  // {
+  //   path: 'lazy',
+  //   loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
+  // },
   {
-    path: 'lazy',
-    loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
+    path: 'bestps',
+    loadChildren: () => import('./best-practices/best-practices.module').then(m => m.BestPracticesModule)
   },
 
   {

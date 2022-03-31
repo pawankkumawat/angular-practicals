@@ -35,12 +35,12 @@ export interface BranchingData {
   value: string;
 }
 
-export interface Category {
+export interface Master {
   Id: number;
   Text: string;
-  DateCreated: string;
+  ModifiedBy: string;
   DateModified: string;
-  IsActive: boolean;
+  IsDeleted: boolean;
   IsUsed: boolean;
 }
 
@@ -49,4 +49,9 @@ export interface Rights {
   hasDeleteRights: boolean;
   hasUpdateRights: boolean;
   hasCreateRights: boolean;
+}
+
+export interface State {
+  id: number,
+  text: string
 }

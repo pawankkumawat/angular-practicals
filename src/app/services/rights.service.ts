@@ -14,7 +14,7 @@ export class RightsService {
       map(() => ({
         hasReadRights: true,
         hasDeleteRights: true,
-        hasUpdateRights: false,
+        hasUpdateRights: true,
         hasCreateRights: true,
       }))
     );

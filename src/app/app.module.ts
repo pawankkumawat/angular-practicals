@@ -17,6 +17,7 @@ import { MastersModule } from './masters/masters.module';
 import { RxjsModule } from './rxjs/rxjs.module';
 import { SearchTypeAheadModule } from './search-type-ahead/search-type-ahead.module';
 import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
+import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
 
 
 
@@ -42,6 +43,7 @@ import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Rout
     MastersModule,
     RxjsModule,
     SearchTypeAheadModule,
+    ControlValueAccessorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

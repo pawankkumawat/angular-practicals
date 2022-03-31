@@ -11,7 +11,7 @@ import { DependencyInjectionModule } from '../dependency-injection/dependency-in
   imports: [
     CommonModule,
     RouterModule.forChild([{
-      path: '',
+      path: 'lazy',
       component: LazyComponent,
     },]),
     DependencyInjectionModule

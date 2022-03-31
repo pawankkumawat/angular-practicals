@@ -1,1 +1,41 @@
-<p>search-category works!</p>
+
+<mat-list role="list">
+        <mat-list-item *ngFor="let district of districts" role="listitem"> {{district.text}}</mat-list-item>
+</mat-list>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Favorite food</mat-label>
+    <input matInput placeholder="search" (input)="filterStates($event.target)" #search>
+</mat-form-field> -->
+<!-- 
+<mat-form-field appearance="fill">
+    <mat-label>State</mat-label>
+    <mat-select>
+        <mat-option *ngFor="let state of states" [value]="state.id">
+            {{state.text}}
+        </mat-option>
+    </mat-select>
+</mat-form-field> -->

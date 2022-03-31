@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GroupComponent } from './group/group.component';
+import { CountryComponent } from './coutry/coutry.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AllMaterialModule } from '../angular-material/all-material-module';
 import { RouterModule } from '@angular/router';
@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
-    GroupComponent
+    CountryComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +17,7 @@ import { RouterModule } from '@angular/router';
     ReactiveFormsModule,
     AllMaterialModule,
     RouterModule.forChild([
-      { path: 'category', component: GroupComponent },
+      { path: 'country/:id', component: CountryComponent },
     ]),
   ]
 })

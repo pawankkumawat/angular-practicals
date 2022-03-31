@@ -1,0 +1,28 @@
+<ng-template #loading>
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>
+<div *ngIf="country else loading">
+<form class="example-form" [formGroup]="form">
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Text</mat-label>
+        <input matInput placeholder="Text" formControlName="Text">
+        <!-- <mat-error *ngIf="form.errors.required"> Required</mat-error> -->
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>DateModified</mat-label>
+        <input matInput placeholder="Date Modified" formControlName="DateModified">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Modified By</mat-label>
+        <input matInput placeholder="Modified By" formControlName="ModifiedBy">
+    </mat-form-field>
+    <div>
+        <mat-checkbox formControlName="IsDeleted" class="example-margin">is Deleted</mat-checkbox>
+    </div>
+</form>
+</div>
+<div class="btns">
+    <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid || !canUpdate">Save</button>
+    <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="form.pristine">Discard</button>
+    <button mat-raised-button color="primary" (click)="deleteBtnClick()" [disabled]="this.form?.get('IsUsed')?.value || !canDelete">Delete</button>
+</div>

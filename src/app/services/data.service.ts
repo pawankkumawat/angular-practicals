@@ -2,8 +2,8 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { RAPID_API_KEY } from '../constants/constant';
-import { Blog, Group, User } from '../models/models';
+import { District, DISTRICTS, RAPID_API_KEY, STATES } from '../constants/constant';
+import { Blog, Group, State, User } from '../models/models';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +12,7 @@ export class DataService {
   constructor(private http: HttpClient) {}
 
   getUser(): Observable<User> {
-    return timer(1000).pipe(
+    return timer(5000).pipe(
       map((x) => ({
         id: 1,
         name: 'Rajiv',
@@ -66,14 +66,33 @@ export class DataService {
     );
   }
 
-  getMasterData() {
+  getCountryById(id:any) {
+    return timer(5000).pipe(
+      map((x) => ({
+        Id: 2,
+        Text: 'Ukraine',
+        ModifiedBy: 'Admin',
+        DateModified: '20-11-2021',
+        IsDeleted: true,
+        IsUsed: false,
+      }))
+    );
+  }
+  updateCountry(id:number,text:string) {
+    return timer(5000).pipe(
+      map((x) => ({
+        Response:'Successful'
+      }))
+    );
+  }
+  getCountryMaster() {
     return timer(2000).pipe(
       map((x) => ({
         Id: 1,
-        Text: 'General',
+        Text: 'Ukraine',
         DateCreated: '20-11-2021',
         DateModified: '20-11-2021',
-        IsActive: true,
+        IsDeleted: true,
         IsUsed: false,
       }))
     );
@@ -88,4 +107,69 @@ export class DataService {
       })
       .pipe(map((response: any) => response['q'] as string));
   }
+
+  getStates():Observable<State[]>{
+    return timer(2000).pipe(
+      map((x) => STATES)
+    );
+  }
+  getDistrict():Observable<District[]>{
+    return timer(200).pipe(
+      map((x) => DISTRICTS)
+    );
+  }
+  getStateById(id:number):Observable<State>{
+    return timer(100).pipe(
+      map((x) => ({ id: 1, text: 'Andhra Pradesh' }))
+    );
+  }
+  getDistrictsByStateId(stateId:number):Observable<District[]>{
+    return timer(200).pipe(
+      map((x) => DISTRICTS)
+    );
+  }
+
+  getData(filterText: string) {
+    const timertTime = Math.floor(Math.random() * 10000);
+    console.log(`SearchText: ${filterText},Time taken by API: ${timertTime} milliseconds`)
+    return timer(timertTime).pipe(
+      map((x) =>
+        [
+          { id: 1, text: 'Andhra Pradesh' },
+          { id: 2, text: 'Arunachal Pradesh' },
+          { id: 3, text: 'Assam' },
+          { id: 4, text: 'Bihar' },
+          { id: 5, text: 'Chhattisgarh' },
+          { id: 6, text: 'Goa' },
+          { id: 7, text: 'Gujarat' },
+          { id: 8, text: 'Haryana' },
+          { id: 9, text: 'Himachal Pradesh' },
+          { id: 10, text: 'Jharkhand' },
+          { id: 11, text: 'Karnataka' },
+          { id: 12, text: 'Kerala' },
+          { id: 13, text: 'Madhya Pradesh' },
+          { id: 14, text: 'Maharashtra' },
+          { id: 15, text: 'Manipur' },
+          { id: 16, text: 'Meghalaya' },
+          { id: 17, text: 'Mizoram' },
+          { id: 18, text: 'Nagaland' },
+          { id: 19, text: 'Odisha' },
+          { id: 20, text: 'Punjab' },
+          { id: 21, text: 'Rajasthan' },
+          { id: 22, text: 'Sikkim' },
+          { id: 23, text: 'Tamil Nadu' },
+          { id: 24, text: 'Telangana' },
+          { id: 25, text: 'Tripura' },
+          { id: 26, text: 'Uttarakhand' },
+          { id: 27, text: 'Uttar Pradesh' },
+          { id: 28, text: 'West Bengal' },
+        ].filter((state) =>
+          state.text
+            .toLocaleLowerCase()
+            .includes(filterText.toLocaleLowerCase())
+        )
+      )
+    );
+  }
+
 }

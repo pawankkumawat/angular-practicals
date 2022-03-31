@@ -5,13 +5,15 @@ import { SearchDialogComponent } from './search-dialog/search-dialog.component';
 import { AllMaterialModule } from '../angular-material/all-material-module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { StatePipe } from './state.pipe';
 
 
 
 @NgModule({
   declarations: [
     SearchCategoryComponent,
-    SearchDialogComponent
+    SearchDialogComponent,
+    StatePipe
   ],
   imports: [
     CommonModule,
@@ -21,8 +23,12 @@ import { RouterModule } from '@angular/router';
     RouterModule.forChild([
       {
         path: 'sta',
+        component: SearchCategoryComponent
+      },
+      {
+        path: 'stan',
         component: SearchDialogComponent
-      }
+      },
     ])
   ]
 })
