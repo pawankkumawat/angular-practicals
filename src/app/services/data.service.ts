@@ -1,9 +1,10 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { NumberValueAccessor } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { District, DISTRICTS, RAPID_API_KEY, STATES } from '../constants/constant';
-import { Blog, Group, State, User } from '../models/models';
+import { Blog, Group, NameValuePair, ReportData, State, User } from '../models/models';
 
 @Injectable({
   providedIn: 'root',
@@ -52,6 +53,20 @@ export class DataService {
   }
 
   getDropDownData(): Observable<Group[]> {
+    return timer(2000).pipe(
+      map((x) => [
+        // {
+        //   id: 1,
+        //   text: 'Group 1',
+        // },
+        // {
+        //   id: 2,
+        //   text: 'Group 2',
+        // },
+      ])
+    );
+  }
+  getCategoryByBlogId(id:number): Observable<Group[]> {
     return timer(2000).pipe(
       map((x) => [
         // {
@@ -170,6 +185,49 @@ export class DataService {
         )
       )
     );
+  }
+
+  getReports(): Observable<NameValuePair[]> {
+    return timer(2000).pipe(
+      map((x) => [
+        {
+          name: 'Service',
+          value: '1',
+        },
+        {
+          name: 'Order',
+          value: '2',
+        },
+        {
+          name: 'Invoice',
+          value: '2',
+        },
+      ])
+    );
+  }
+  getReportFormats(): Observable<NameValuePair[]> {
+    return timer(100).pipe(
+      map((x) => [
+        {
+          name: 'Excel',
+          value: '1',
+        },
+        {
+          name: 'Pdf',
+          value: '2',
+        },
+        
+      ])
+    );
+  }
+
+  getSavedReportData():Observable<ReportData>{
+    return timer(100).pipe(
+      map(() =>({
+          reportValue: "1",
+          reportFormatValue: "1"
+        })
+    ));
   }
 
 }

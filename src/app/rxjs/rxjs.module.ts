@@ -5,6 +5,8 @@ import { RouterModule } from '@angular/router';
 import { AllMaterialModule } from '../angular-material/all-material-module';
 import { C1Component } from './c1/c1.component';
 import { C2Component } from './c2/c2.component';
+import { ForkjoinComponent } from './forkjoin/forkjoin.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -12,10 +14,13 @@ import { C2Component } from './c2/c2.component';
   declarations: [
     SubjectBehaviorSubjectComponent,
     C1Component,
-    C2Component
+    C2Component,
+    ForkjoinComponent
   ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
     AllMaterialModule,
     RouterModule.forChild([
       {
@@ -26,6 +31,9 @@ import { C2Component } from './c2/c2.component';
       },
       {
         path: 'rxjs/c2', component: C2Component
+      },
+      {
+        path: 'rxjs/fj', component: ForkjoinComponent
       },
     ])
   ]

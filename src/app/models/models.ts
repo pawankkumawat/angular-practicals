@@ -55,3 +55,13 @@ export interface State {
   id: number,
   text: string
 }
+
+export interface NameValuePair{
+  name:string;
+  value:string;
+}
+
+export interface ReportData{
+    reportValue: string,
+    reportFormatValue: string,
+}
