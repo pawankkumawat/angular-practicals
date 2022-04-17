@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule} from '@angular/common/http';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import {  routeslist } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -18,6 +18,8 @@ import { RxjsModule } from './rxjs/rxjs.module';
 import { SearchTypeAheadModule } from './search-type-ahead/search-type-ahead.module';
 import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
 import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
+import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
 
 
 
@@ -26,6 +28,7 @@ import { ControlValueAccessorModule } from './control-value-accessor/control-val
 @NgModule({
   declarations: [
     AppComponent,
+    InterceptorComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,13 @@ import { ControlValueAccessorModule } from './control-value-accessor/control-val
     SearchTypeAheadModule,
     ControlValueAccessorModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:AuthInterceptor,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

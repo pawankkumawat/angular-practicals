@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { District, DISTRICTS, RAPID_API_KEY, STATES } from '../constants/constant';
+import { District, DISTRICTS, RAPID_API_HOST, RAPID_API_KEY, STATES } from '../constants/constant';
 import { Blog, Group, NameValuePair, ReportData, State, User } from '../models/models';
 
 @Injectable({
@@ -116,12 +116,14 @@ export class DataService {
   getDataFromAPI(): Observable<string> {
     return this.http
       .get('https://imdb8.p.rapidapi.com/auto-complete?q=game', {
-        headers: new HttpHeaders()
-          .set('x-rapidapi-host', 'imdb8.p.rapidapi.com')
-          .set('x-rapidapi-key', RAPID_API_KEY),
-      })
-      .pipe(map((response: any) => response['q'] as string));
+        // headers: new HttpHeaders()
+        //   .set('x-rapidapi-host', 'imdb8.p.rapidapi.com')
+        //   .set('x-rapidapi-key', RAPID_API_KEY),
+      }
+      ).pipe(map((response: any) => response['q'] as string));
   }
+
+ 
 
   getStates():Observable<State[]>{
     return timer(2000).pipe(

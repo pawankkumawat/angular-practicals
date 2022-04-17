@@ -1,5 +1,6 @@
 import { BranchingData, State, Stats } from '../models/models';
 export const RAPID_API_KEY = "a7c3d8be1dmsha7f85716a325b57p19b334jsn4031c04421df"
+export const RAPID_API_HOST = "imdb8.p.rapidapi.com"
 
 export const Statistics: Stats[] = [
   {
@@ -45,6 +46,10 @@ export const Routes = [
     value: 'strategy',
   },
   {
+    text: 'Bridge Pattern',
+    value: 'bridge',
+  },
+  {
     text: 'HigherOrder Operators',
     value: 'higherops',
   },
@@ -72,7 +77,7 @@ export const Routes = [
     text: 'Callback Hell',
     value: 'cbh',
   },
-  
+
   {
     text: 'Search Type Ahead',
     value: 'sta',
@@ -81,7 +86,7 @@ export const Routes = [
     text: 'Country Master',
     value: 'country/2',
   },
-  
+
 ];
 
 export const BranchingDataObj: BranchingData[] = [
@@ -113,8 +118,8 @@ export interface District{
   text:string
 }
 
-export const DISTRICTS: District[] = 
-  [  
+export const DISTRICTS: District[] =
+  [
     {"distId":1,text:"Anantapur"},
     {"distId":1,text:"Chittoor"},
     {"distId":1,text:"East Godavari"},

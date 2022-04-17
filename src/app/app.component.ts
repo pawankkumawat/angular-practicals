@@ -28,7 +28,7 @@ export class AppComponent {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
-  this.routeData$ = this.routerdataService.routeData$;
+    this.routeData$ = this.routerdataService.routeData$;
   }
 
   ngOnDestroy(): void {

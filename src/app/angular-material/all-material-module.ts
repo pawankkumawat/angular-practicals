@@ -15,6 +15,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatStepperModule} from '@angular/material/stepper';
 
 
 @NgModule ({
@@ -34,7 +36,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatStepperModule
   ],
   exports:[
     MatSliderModule,
@@ -52,7 +56,9 @@ import {MatSnackBarModule} from '@angular/material/snack-bar';
     MatCardModule,
     MatCheckboxModule,
     MatDialogModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatTabsModule,
+    MatStepperModule
   ]
 })
 export class AllMaterialModule {}
