@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
-import { Category, Rights } from 'src/app/models/models';
+import { Rights } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 import { ConsoleLoggerService } from './console-logger.service';
 import { CountService, RightsService } from '../../services/rights.service';

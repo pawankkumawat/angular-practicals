@@ -2,17 +2,17 @@
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ng-template>
 <div *ngIf="country else loading">
-<form class="example-form" [formGroup]="form">
-    <mat-form-field class="example-full-width" appearance="fill">
+<form class="form" [formGroup]="form">
+    <mat-form-field class="full-width" appearance="fill">
         <mat-label>Text</mat-label>
         <input matInput placeholder="Text" formControlName="Text">
         <!-- <mat-error *ngIf="form.errors.required"> Required</mat-error> -->
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="full-width" appearance="fill">
         <mat-label>DateModified</mat-label>
         <input matInput placeholder="Date Modified" formControlName="DateModified">
     </mat-form-field>
-    <mat-form-field class="example-full-width" appearance="fill">
+    <mat-form-field class="full-width" appearance="fill">
         <mat-label>Modified By</mat-label>
         <input matInput placeholder="Modified By" formControlName="ModifiedBy">
     </mat-form-field>

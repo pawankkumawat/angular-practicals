@@ -1,0 +1,18 @@
+
+  <h1>Login</h1>
+  <form class="form" [formGroup]="form">
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Username" formControlName="username">
+        <mat-error *ngIf="username?.errors?.required"></mat-error>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Password</mat-label>
+        <input matInput type="password"  placeholder="Password" formControlName="password">
+        <mat-error *ngIf="password?.errors?.required"></mat-error>
+    </mat-form-field>
+    <br>
+    <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid">Save</button>
+</form>
+
+

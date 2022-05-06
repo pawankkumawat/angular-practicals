@@ -2,12 +2,12 @@
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
 </ng-template>
 <ng-container *ngIf="blog$ | async as blog else loading">
-    <form class="example-form">
-        <mat-form-field class="example-full-width" appearance="fill">
+    <form class="form">
+        <mat-form-field class="full-width" appearance="fill">
             <mat-label>Title</mat-label>
             <input matInput placeholder="Ex. Pizza" value="{{blog.title}}">
         </mat-form-field>
-        <mat-form-field class="example-full-width" appearance="fill">
+        <mat-form-field class="full-width" appearance="fill">
             <mat-label>Category</mat-label>
             <input matInput placeholder="Ex. Pizza" value="{{blog.category}}">
         </mat-form-field>

@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { LazyComponent } from './lazy.component';
 import { RouterModule } from '@angular/router';
 import { DependencyInjectionModule } from '../dependency-injection/dependency-injection.module';
+import { UserService } from '../services/user.service';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -11,10 +13,11 @@ import { DependencyInjectionModule } from '../dependency-injection/dependency-in
   imports: [
     CommonModule,
     RouterModule.forChild([{
-      path: 'lazy',
+      path: '',
       component: LazyComponent,
     },]),
-    DependencyInjectionModule
+    SharedModule,
+    DependencyInjectionModule,
   ]
 })
 export class LazyModule { }

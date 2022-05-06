@@ -123,7 +123,16 @@ export class DataService {
       ).pipe(map((response: any) => response['q'] as string));
   }
 
- 
+  getRapidAllImages(){
+    return this.http.get('https://imdb8.p.rapidapi.com/actors/get-all-images')
+    .pipe(map((response: any) => response['resource']['images'] as string));
+  }
+  getMovieDetailsbyId(){
+    return this.http.get('https://movie-details1.p.rapidapi.com/imdb_api/movie?id=tt1375666')
+    .pipe(map((response: any) => response['resource']['images'] as string));
+  }
+
+
 
   getStates():Observable<State[]>{
     return timer(2000).pipe(
@@ -218,7 +227,7 @@ export class DataService {
           name: 'Pdf',
           value: '2',
         },
-        
+
       ])
     );
   }

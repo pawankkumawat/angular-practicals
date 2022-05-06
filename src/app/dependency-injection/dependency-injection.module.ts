@@ -23,6 +23,6 @@ import { WhatsDiComponent } from './whats-di/whats-di.component';
       { path: 'di/wdi', component: WhatsDiComponent },
     ]),
   ],
-  
+
 })
 export class DependencyInjectionModule {}

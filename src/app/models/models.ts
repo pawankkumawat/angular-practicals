@@ -65,3 +65,5 @@ export interface ReportData{
     reportValue: string,
     reportFormatValue: string,
 }
+
+

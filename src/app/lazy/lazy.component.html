@@ -1,1 +1,7 @@
-<p>lazy works!</p>
+<div style="display: flex;justify-content: space-between;">
+  <h1>Lazy Component</h1>
+  <ng-container *ngIf="(user$ | async)?.name as username">
+  <h2 style="background-color: blue;border-radius: 10px;color: white;padding:2px"> Welcome {{username }} </h2>
+</ng-container>
+</div>
+<app-shared-c1></app-shared-c1>

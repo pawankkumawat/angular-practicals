@@ -20,6 +20,11 @@ import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Rout
 import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserService } from './services/user.service';
+import { SharedModule } from './shared/shared.module';
 
 
 
@@ -29,6 +34,8 @@ import { InterceptorComponent } from './interceptors/interceptor/interceptor.com
   declarations: [
     AppComponent,
     InterceptorComponent,
+    LoginComponent,
+    LogoutComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,14 +53,18 @@ import { InterceptorComponent } from './interceptors/interceptor/interceptor.com
     MastersModule,
     RxjsModule,
     SearchTypeAheadModule,
-    ControlValueAccessorModule
+    ControlValueAccessorModule,
+    FormsModule,
+    ReactiveFormsModule,
+    SharedModule
   ],
   providers: [
     {
       provide:HTTP_INTERCEPTORS,
       useClass:AuthInterceptor,
       multi:true
-    }
+    },
+    // UserService
   ],
   bootstrap: [AppComponent]
 })

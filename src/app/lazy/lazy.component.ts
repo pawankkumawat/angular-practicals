@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../services/data.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-lazy',
@@ -6,9 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./lazy.component.scss']
 })
 export class LazyComponent implements OnInit {
-
-  constructor() { }
-
+  constructor(private userService:UserService) { }
+  user$ = this.userService.user$;
   ngOnInit(): void {
   }
 

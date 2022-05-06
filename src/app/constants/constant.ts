@@ -1,5 +1,5 @@
 import { BranchingData, State, Stats } from '../models/models';
-export const RAPID_API_KEY = "a7c3d8be1dmsha7f85716a325b57p19b334jsn4031c04421df"
+export const RAPID_API_KEY = "56b4e73c58msh5121ea96e2354fep1ecbabjsn23ac916853ed"
 export const RAPID_API_HOST = "imdb8.p.rapidapi.com"
 
 export const Statistics: Stats[] = [

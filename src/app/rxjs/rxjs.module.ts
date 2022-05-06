@@ -7,6 +7,8 @@ import { C1Component } from './c1/c1.component';
 import { C2Component } from './c2/c2.component';
 import { ForkjoinComponent } from './forkjoin/forkjoin.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MergemapComponent } from './mergemap/mergemap.component';
+import { AutoRefreshTimerComponent } from './auto-refresh-timer/auto-refresh-timer.component';
 
 
 
@@ -15,7 +17,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     SubjectBehaviorSubjectComponent,
     C1Component,
     C2Component,
-    ForkjoinComponent
+    ForkjoinComponent,
+    MergemapComponent,
+    AutoRefreshTimerComponent
   ],
   imports: [
     CommonModule,
@@ -34,6 +38,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
       },
       {
         path: 'rxjs/fj', component: ForkjoinComponent
+      },
+      {
+        path: 'rxjs/merge', component: MergemapComponent
+      },
+      {
+        path: 'rxjs/autimer', component: AutoRefreshTimerComponent
       },
     ])
   ]
