@@ -1,8 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100vh; }
+html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
 
 .btns{
   margin-top:auto;
@@ -10,9 +9,9 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 
 .form {
-  min-width: 150px;
-  max-width: 500px;
+  min-width: 100px;
   width: 100%;
+  margin-top:10px;
 }
 
 .full-width {
@@ -22,3 +21,61 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .example-spacer {
   flex: 1 1 auto;
 }
+
+
+footer{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: grey;
+  color: white;
+  text-align: center;
+  margin: auto;
+}
+
+.flex-parent{
+  display: flex;
+  width: 100%;
+}
+
+.flex-child {
+  flex: 1;
+  margin: 10px;
+}
+.flex-child:first-child {
+  margin-right: 20px;
+}
+
+fieldset{
+  border: 1px solid rgba(0,0,0,.2)
+}
+
+// Custome scroll bar
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+    overflow-y: scroll;
+    background: grey;
+    box-shadow: inset 0 0 4px #707070;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(250, 5, 168);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(250, 5, 168);
+
+}
+
+// Custom scrollbar

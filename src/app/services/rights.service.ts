@@ -9,7 +9,7 @@ import { Rights } from 'src/app/models/models';
 export class RightsService {
   constructor() {}
 
-  getRights(type: string): Observable<Rights> {
+  getRights(): Observable<Rights> {
     return timer(1000).pipe(
       map(() => ({
         hasReadRights: true,

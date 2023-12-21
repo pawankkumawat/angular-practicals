@@ -4,7 +4,7 @@ import { LazyComponent } from './lazy.component';
 import { RouterModule } from '@angular/router';
 import { DependencyInjectionModule } from '../dependency-injection/dependency-injection.module';
 import { UserService } from '../services/user.service';
-import { SharedModule } from '../shared/shared.module';
+import { SharedC1Component } from '../shared/shared-c1/shared-c1.component';
 
 
 
@@ -16,7 +16,7 @@ import { SharedModule } from '../shared/shared.module';
       path: '',
       component: LazyComponent,
     },]),
-    SharedModule,
+    SharedC1Component,
     DependencyInjectionModule,
   ]
 })

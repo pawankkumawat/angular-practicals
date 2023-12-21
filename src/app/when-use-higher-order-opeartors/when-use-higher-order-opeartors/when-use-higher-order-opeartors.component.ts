@@ -1,14 +1,8 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
-import { concat, Observable, Subscription } from 'rxjs';
+import { Component, OnInit } from '@angular/core';
 import {
-  concatMap,
-  switchMap,
-  flatMap,
-  mergeMap,
-  map,
-  tap,
+  concatMap, tap
 } from 'rxjs/operators';
-import { Blog, User } from 'src/app/models/models';
+import { Blog } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -20,7 +14,7 @@ export class WhenUseHigherOrderOpeartorsComponent implements OnInit {
   constructor(private service: DataService) {}
 
   blog!: Blog;
-  
+
   ngOnInit(): void {
     this.service
       .getUser()

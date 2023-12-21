@@ -86,6 +86,10 @@ export const Routes = [
     text: 'Country Master',
     value: 'country/2',
   },
+  {
+    text: 'Bad Component Design',
+    value: 'bad/1',
+  },
 
 ];
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-approval',
@@ -7,7 +7,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class ApprovalComponent {
 
-  constructor(private fb: FormBuilder,) { }
+  constructor(private fb: UntypedFormBuilder,) { }
 
 
   form = this.fb.group({

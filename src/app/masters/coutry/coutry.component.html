@@ -24,5 +24,5 @@
 <div class="btns">
     <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid || !canUpdate">Save</button>
     <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="form.pristine">Discard</button>
-    <button mat-raised-button color="primary" (click)="deleteBtnClick()" [disabled]="this.form?.get('IsUsed')?.value || !canDelete">Delete</button>
+    <button mat-raised-button color="primary" (click)="deleteBtnClick()" [disabled]="this.form.get('IsUsed')?.value || !canDelete">Delete</button>
 </div>

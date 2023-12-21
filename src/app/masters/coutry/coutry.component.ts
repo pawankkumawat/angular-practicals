@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { RightsService } from 'src/app/services/rights.service';
 import { Master, Rights } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
@@ -11,14 +11,14 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./coutry.component.scss'],
 })
 export class CountryComponent implements OnInit {
-  form!: FormGroup;
+  form!: UntypedFormGroup;
   country!: Master;
   rights!: Rights;
   canUpdate = false;
   canDelete = false;
 
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private dataService: DataService,
     private activatedRoute: ActivatedRoute,
     private rightsService: RightsService
@@ -38,7 +38,7 @@ export class CountryComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.rightsService.getRights('Country').subscribe((rights) => {
+    this.rightsService.getRights().subscribe((rights) => {
       this.canDelete = rights.hasCreateRights;
       this.canUpdate = rights.hasUpdateRights;
       this.activatedRoute.params.subscribe((params) => {

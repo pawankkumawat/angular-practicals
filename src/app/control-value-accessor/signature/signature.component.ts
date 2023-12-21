@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SignaturePad } from 'angular2-signaturepad';
 
@@ -15,19 +15,19 @@ export class SignatureComponent implements ControlValueAccessor {
 
   @ViewChild(SignaturePad) signaturePad!: SignaturePad;
 
-  
-  signaturePadOptions: Object = { 
+
+  signaturePadOptions: Object = {
     'minWidth': 5,
     'canvasWidth': 500,
     'canvasHeight': 300
   };
   constructor() { }
- 
-  
+
+
 
   ngAfterViewInit() {
-    this.signaturePad.set('minWidth', 5); 
-    this.signaturePad.clear(); 
+    this.signaturePad.set('minWidth', 5);
+    this.signaturePad.clear();
   }
 
   // @Output()

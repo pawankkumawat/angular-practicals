@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormArray, FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { AbstractControl, FormArray, UntypedFormBuilder, UntypedFormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { forkJoin } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { NameValuePair, ReportData } from 'src/app/models/models';
@@ -11,7 +11,7 @@ import { DataService } from 'src/app/services/data.service';
    
 })
 export class ForkjoinComponent implements OnInit {
-    form!:FormGroup;
+    form!:UntypedFormGroup;
     reports :NameValuePair[]=[];
     reportFormats :NameValuePair[]=[];
     // isReportsAvailable=false;
@@ -19,7 +19,7 @@ export class ForkjoinComponent implements OnInit {
     // isReportDataAvailable=false;
     isAllDataAvailable=false;
     constructor(
-      private fb: FormBuilder,
+      private fb: UntypedFormBuilder,
       private dataService:DataService
       ) { 
         this.form =this.fb.group({

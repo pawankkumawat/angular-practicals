@@ -4,7 +4,8 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-shared-c1',
   templateUrl: './shared-c1.component.html',
   styles: [
-  ]
+  ],
+  standalone:true
 })
 export class SharedC1Component implements OnInit {
 

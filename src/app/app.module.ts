@@ -10,7 +10,6 @@ import { NgContainerModule } from './ng-container/ng-container.module';
 import { WhenUseHigherOrderOpeartorsModule } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors.module';
 import { CallbackHellModule } from './callback-hell/callback-hell.module';
 import { UnsubObsModule } from './unsub-obs/unsub-obs.module';
-import { DashboardModule } from './dashboard/dashboard.module';
 import { DesignPatternsModule } from './design-patterns/design-patterns.module';
 import { BranchingModule } from './branching/branching.module';
 import { MastersModule } from './masters/masters.module';
@@ -20,11 +19,9 @@ import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Rout
 import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
-import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from './services/user.service';
-import { SharedModule } from './shared/shared.module';
 
 
 
@@ -34,7 +31,7 @@ import { SharedModule } from './shared/shared.module';
   declarations: [
     AppComponent,
     InterceptorComponent,
-    LoginComponent,
+
     LogoutComponent,
   ],
   imports: [
@@ -47,7 +44,7 @@ import { SharedModule } from './shared/shared.module';
     WhenUseHigherOrderOpeartorsModule,
     CallbackHellModule,
     UnsubObsModule,
-    DashboardModule,
+    // DashboardModule,
     DesignPatternsModule,
     BranchingModule,
     MastersModule,
@@ -56,7 +53,6 @@ import { SharedModule } from './shared/shared.module';
     ControlValueAccessorModule,
     FormsModule,
     ReactiveFormsModule,
-    SharedModule
   ],
   providers: [
     {

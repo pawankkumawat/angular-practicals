@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BadComponetDesignComponent } from './component-design/bad-componet-design/bad-componet-design.component';
 import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
 import { StrategyComponent } from './design-patterns/strategy/strategy.component';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
@@ -7,6 +8,7 @@ import { LazyComponent } from './lazy/lazy.component';
 import { LoginComponent } from './login/login.component';
 import { UnsubObservableOneComponent } from './unsub-obs/unsub-observable-one/unsub-observable-one.component';
 import { WhenUseHigherOrderOpeartorsComponent } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors/when-use-higher-order-opeartors.component';
+import {  CanDeactivateCustomGuard, candeactivateGuard } from './guards/candeactivate.guard';
 
 export const routeslist: Routes = [
 
@@ -30,9 +32,15 @@ export const routeslist: Routes = [
   {
     path: 'login',
     component: LoginComponent,
+    canDeactivate:[candeactivateGuard]
   },
   {
     path: 'interc',
     component: InterceptorComponent,
+  },
+  {
+    path: 'bad/:id',
+    component: BadComponetDesignComponent,
+    canDeactivate:[CanDeactivateCustomGuard]
   },
 ];

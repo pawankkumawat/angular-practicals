@@ -1,8 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
-import { MatInput } from '@angular/material/input';
-import { fromEvent, Observable, of } from 'rxjs';
-import { debounceTime, distinctUntilChanged, filter, map, mergeMap, startWith, switchMap, tap } from 'rxjs/operators';
-import { State } from 'src/app/models/models';
+import { fromEvent } from 'rxjs';
+import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({

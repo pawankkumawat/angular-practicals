@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {
-  MatDialog,
+  MatDialog as MatDialog,
 } from '@angular/material/dialog';
 import { DialogComponent } from '../dialog/dialog.component';
 
@@ -10,11 +10,11 @@ import { DialogComponent } from '../dialog/dialog.component';
   styles: [],
 })
 export class AsyncPipeUsecaseOneComponent {
- 
+
   constructor(
     public dialog: MatDialog,
     ) {}
- 
+
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogComponent, {
       width: '250px',
@@ -23,7 +23,7 @@ export class AsyncPipeUsecaseOneComponent {
     dialogRef.afterClosed().subscribe();
   }
 
- 
+
 }
 
 

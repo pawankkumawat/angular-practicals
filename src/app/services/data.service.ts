@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
 import { Observable, timer } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { District, DISTRICTS, RAPID_API_HOST, RAPID_API_KEY, STATES } from '../constants/constant';
 import { Blog, Group, NameValuePair, ReportData, State, User } from '../models/models';
 
@@ -241,4 +241,75 @@ export class DataService {
     ));
   }
 
+  getOrderData():Observable<Order>{
+    return timer(2000).pipe(
+      map((x) => ({
+        orderId:1,
+        status:14
+      }))
+    );
+  }
+  getCustomerData():Observable<Customer>{
+    return timer(2000).pipe(
+      map((x) => ({
+           custId:1,
+          Email:'mywayorskyway@gmail.com',
+          Telephone:'1234567890',
+          Address:'Pune',
+          Pin:'123456',
+      }))
+    );
+  }
+  getVehicleData():Observable<Vehicle>{
+    return timer(2000).pipe(
+      map((x) => ({
+        VehicleId:1,
+        VehicleNo:'MH14MYWAYORSKYWAY',
+        OdometerReading:'',
+        RegistrationDate:'20-Nov-2023',
+        LastServiceDate:'22-Mar-2024'
+      }))
+    );
+  }
+  getOtherInfo():Observable<OtherInfo>{
+    return timer(2000).pipe(
+      map((x) => ({
+        Notes:'Notes here',
+        LastModifiedBy: 'Admin'
+      }))
+    );
+  }
+  saveData(value:any){
+    return timer(2000).pipe(
+      tap(() => console.log('saving'))
+    );
+  }
+}
+
+export interface Order
+{
+  orderId:number;
+  status:number;
+}
+export interface Customer
+{
+  custId:number;
+  Email:string;
+  Telephone:string;
+  Address:string;
+  Pin:string;
+}
+export interface Vehicle
+{
+  VehicleId:number;
+  VehicleNo:string;
+  OdometerReading:string;
+  RegistrationDate:string;
+  LastServiceDate:string;
+}
+
+export interface OtherInfo
+{
+  Notes:string;
+  LastModifiedBy:string;
 }

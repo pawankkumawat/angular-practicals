@@ -1,19 +1,37 @@
+import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
 import { UserService } from '../services/user.service';
+import {MatButtonModule} from '@angular/material/button';
+import { Candeactivate } from '../guards/candeactivate.guard';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+  ],
 })
-export class LoginComponent implements OnInit {
-  form!: FormGroup;
+export class LoginComponent implements OnInit ,Candeactivate {
+  form!: UntypedFormGroup;
   constructor(
-    private fb: FormBuilder,
+    private fb: UntypedFormBuilder,
     private userService: UserService,
     private router:Router) {}
+
+    candeactivate():boolean{
+      return this.form.touched;
+     };
 
   ngOnInit(): void {
     this.form = this.fb.group({

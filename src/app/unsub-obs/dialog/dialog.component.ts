@@ -1,5 +1,5 @@
 import { Component, } from '@angular/core';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar as MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -17,7 +17,7 @@ export class DialogComponent{
   ngOnInit(): void {
     this.data$= this.service.getDataFromAPI()
                  .pipe(tap((response) => this.openSnackBar()))
-                
+
   }
 
 
@@ -26,6 +26,6 @@ export class DialogComponent{
       duration: 5000,
     });
   }
- 
+
 }
 
