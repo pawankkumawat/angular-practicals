@@ -9,6 +9,10 @@ import { LoginComponent } from './login/login.component';
 import { UnsubObservableOneComponent } from './unsub-obs/unsub-observable-one/unsub-observable-one.component';
 import { WhenUseHigherOrderOpeartorsComponent } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors/when-use-higher-order-opeartors.component';
 import {  CanDeactivateCustomGuard, candeactivateGuard } from './guards/candeactivate.guard';
+import {  GoodComponentDesignComponent } from './component-design/good-component-design/good-component-design.component';
+import { ContainerComponent } from './component-design/good-component-design/container/container.component';
+import { UnsubObservableTwoComponent } from './unsub-obs/unsub-observable-two/unsub-observable-two.component';
+import { WrapperComponent } from './component-design/good-component-design/wrapper/wrapper.component';
 
 export const routeslist: Routes = [
 
@@ -41,6 +45,16 @@ export const routeslist: Routes = [
   {
     path: 'bad/:id',
     component: BadComponetDesignComponent,
-    canDeactivate:[CanDeactivateCustomGuard]
+    canDeactivate:[candeactivateGuard]
+  },
+  {
+    path: 'good/:id',
+    component: GoodComponentDesignComponent,
+    canDeactivate:[candeactivateGuard]
+  },
+  {
+    path: 'unsub2',
+    component: UnsubObservableTwoComponent,
+    // canDeactivate:[candeactivateGuard]
   },
 ];

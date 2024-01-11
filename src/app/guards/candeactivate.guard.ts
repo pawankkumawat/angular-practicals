@@ -41,12 +41,12 @@ export interface Candeactivate {
 }
 
 export const candeactivateGuard: CanDeactivateFn<Candeactivate> = (
-  component: any,
+  component: Candeactivate,
   currentRoute,
   currentState,
   nextState
 ) => {
-  if (component && component?.candeactivate()) {
+  if (component &&  component.candeactivate && component?.candeactivate()) {
     const service = inject(DialogService);
     const dialogRef = service.openDialog();
 

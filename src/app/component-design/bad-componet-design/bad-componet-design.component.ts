@@ -8,6 +8,8 @@ import { UserService } from 'src/app/services/user.service';
 import { Customer, DataService, Order, OtherInfo, Vehicle } from 'src/app/services/data.service';
 import { Candeactivate } from 'src/app/guards/candeactivate.guard';
 import { DialogService } from 'src/app/dialogs/dialog.service';
+import { Subject } from 'rxjs';
+import { exhaustMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-bad-componet-design',
@@ -16,68 +18,87 @@ import { DialogService } from 'src/app/dialogs/dialog.service';
   templateUrl: './bad-componet-design.component.html',
   styleUrl: './bad-componet-design.component.scss'
 })
-export class BadComponetDesignComponent implements Candeactivate  {
-  form!: UntypedFormGroup;
-  candeactivate():boolean{
+export class BadComponetDesignComponent implements Candeactivate   {
+
+   candeactivate():boolean{
    return this.form.touched;
   };
-  disableAll=false;
+
+  form!: UntypedFormGroup;
+  orderId:number=0;
+  hasRights=false;
   orderData:Order|null = null;
+
   customerData: Customer|null = null
   vehicleData: Vehicle|null = null
   otherInfo: OtherInfo|null = null
-  orderId:number=0;
-  isAllDataReceived=false;
 
+
+  isAllDataReceived=false;
   constructor(
     private fb: UntypedFormBuilder,
     private rightsService: RightsService,
     private dataService:DataService,
     private activatedRoute:ActivatedRoute,
-    private service: DialogService
     ) {}
 
 
   ngOnInit(): void {
     this.createForm();
-    this.form.valueChanges.subscribe((status)=>{
-      if(!this.form.pristine){
-        this.form.markAllAsTouched();
-        // this.form.updateValueAndValidity()
-      }
-    })
     this.activatedRoute.params.subscribe((params)=>{
-      this.orderId = params['id']
+      this.orderId = params['id'];
 
-    this.rightsService.getRights().subscribe((rights)=>{
-      if(!rights.hasUpdateRights){
-        this.disableAll = true;
-      }
-      this.dataService.getOrderData().subscribe((data:Order)=>{
-        this.orderData = data;
-        this.dataService.getCustomerData().subscribe((data:Customer)=>{
-          this.customerData = data;
-          this.dataService.getVehicleData().subscribe((data:Vehicle)=>{
-            this.vehicleData = data;
-            this.dataService.getOtherInfo().subscribe((data:OtherInfo)=>{
-              this.otherInfo = data;
-              this.Email?.patchValue(this.customerData?.Email)
-              this.Address?.patchValue(this.customerData?.Address)
-              this.Telephone?.patchValue(this.customerData?.Telephone)
-              this.Pin?.patchValue(this.customerData?.Pin)
-              this.VehicleNo?.patchValue(this.vehicleData?.VehicleNo)
-              this.RegistrationDate?.patchValue(this.vehicleData?.RegistrationDate)
-              this.LastServiceDate?.patchValue(this.vehicleData?.LastServiceDate)
-              this.OdometerReading?.patchValue(this.vehicleData?.OdometerReading)
-              this.isAllDataReceived =true;
+      this.rightsService.getRights().subscribe((rights)=>{
+        rights.hasUpdateRights?this.hasRights = true:this.hasRights = false;
+
+        this.dataService.getOrderData(this.orderId).subscribe((orderData:Order)=>{
+          this.orderData = orderData;
+          this.dataService.getCustomerData(orderData.custId).subscribe((data:Customer)=>{
+            this.customerData = data;
+            this.dataService.getVehicleData(orderData.VehicleId).subscribe((data:Vehicle)=>{
+              this.vehicleData = data;
+              this.dataService.getOtherInfo(orderData.orderId).subscribe((data:OtherInfo)=>{
+                this.otherInfo=data;
+                this.isAllDataReceived= true;
+
+                this.Email?.patchValue(this.customerData?.Email)
+                this.hasRights?this.Email?.enable():this.Email?.disable();
+
+                this.Address?.patchValue(this.customerData?.Address)
+                this.hasRights?this.Address?.enable():this.Address?.disable();
+
+                this.Telephone?.patchValue(this.customerData?.Telephone)
+                this.hasRights?this.Telephone?.enable():this.Telephone?.disable();
+
+                this.Pin?.patchValue(this.customerData?.Pin)
+                this.hasRights?this.Pin?.enable():this.Pin?.disable();
+
+                this.VehicleNo?.patchValue(this.vehicleData?.VehicleNo)
+                this.hasRights?this.VehicleNo?.enable():this.VehicleNo?.disable();
+
+                this.RegistrationDate?.patchValue(this.vehicleData?.RegistrationDate)
+                this.hasRights?this.RegistrationDate?.enable():this.RegistrationDate?.disable();
+
+                this.LastServiceDate?.patchValue(this.vehicleData?.LastServiceDate)
+                this.hasRights?this.LastServiceDate?.enable():this.LastServiceDate?.disable();
+
+                this.OdometerReading?.patchValue(this.vehicleData?.OdometerReading)
+                this.hasRights?this.OdometerReading?.enable():this.OdometerReading?.disable();
+
+                this.Notes?.patchValue(this.otherInfo?.Notes)
+                this.hasRights?this.Notes?.enable():this.Notes?.disable();
+
+                this.LastModifiedBy?.patchValue(this.otherInfo?.LastModifiedBy)
+                this.hasRights?this.LastModifiedBy?.enable():this.LastModifiedBy?.disable();
+
+              })
             })
           })
-        })
-      }
 
-      )
+        })
+      })
+
     })
-  })
   }
 
   createForm() {
@@ -177,29 +198,31 @@ export class BadComponetDesignComponent implements Candeactivate  {
     return this.form.get('LastModifiedBy');
   }
 
+  isSaveButtonClicked = false;
   saveBtnClick(){
-    this.form.getRawValue();
-    if(this.form.valid)
-    this.dataService.saveData(this.form.getRawValue()).subscribe();
-
+    this.isSaveButtonClicked = true;
+    this.dataService.saveData(this.form.getRawValue()).subscribe(()=>{
+      this.isSaveButtonClicked = false;
+    });
   }
+
   discardBtnClick(){
-   this.form.reset();
-   this.Email?.patchValue(this.customerData?.Email)
-   this.Address?.patchValue(this.customerData?.Address)
-   this.Telephone?.patchValue(this.customerData?.Telephone)
-   this.Pin?.patchValue(this.customerData?.Pin)
-   this.VehicleNo?.patchValue(this.vehicleData?.VehicleNo)
-   this.RegistrationDate?.patchValue(this.vehicleData?.RegistrationDate)
-   this.LastServiceDate?.patchValue(this.vehicleData?.LastServiceDate)
-   this.OdometerReading?.patchValue(this.vehicleData?.OdometerReading)
-   this.isAllDataReceived =true;
-  }
-
-  refreshBtnClick(){
     this.form.reset();
-    this.isAllDataReceived =false;
-    this.ngOnInit();
-  }
+    this.Email?.patchValue(this.customerData?.Email)
+    this.Address?.patchValue(this.customerData?.Address)
+    this.Telephone?.patchValue(this.customerData?.Telephone)
+    this.Pin?.patchValue(this.customerData?.Pin)
+    this.VehicleNo?.patchValue(this.vehicleData?.VehicleNo)
+    this.RegistrationDate?.patchValue(this.vehicleData?.RegistrationDate)
+    this.LastServiceDate?.patchValue(this.vehicleData?.LastServiceDate)
+    this.OdometerReading?.patchValue(this.vehicleData?.OdometerReading)
+    this.Notes?.patchValue(this.otherInfo?.Notes)
+    this.LastModifiedBy?.patchValue(this.otherInfo?.LastModifiedBy)
+   }
 
+   refreshBtnClick(){
+     this.form.reset();
+     this.isAllDataReceived =false;
+     this.ngOnInit();
+   }
 }

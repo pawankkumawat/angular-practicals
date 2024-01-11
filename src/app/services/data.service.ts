@@ -114,13 +114,16 @@ export class DataService {
   }
 
   getDataFromAPI(): Observable<string> {
-    return this.http
-      .get('https://imdb8.p.rapidapi.com/auto-complete?q=game', {
-        // headers: new HttpHeaders()
-        //   .set('x-rapidapi-host', 'imdb8.p.rapidapi.com')
-        //   .set('x-rapidapi-key', RAPID_API_KEY),
-      }
-      ).pipe(map((response: any) => response['q'] as string));
+    // return this.http
+    //   .get('https://imdb8.p.rapidapi.com/auto-complete?q=game', {
+    //     // headers: new HttpHeaders()
+    //     //   .set('x-rapidapi-host', 'imdb8.p.rapidapi.com')
+    //     //   .set('x-rapidapi-key', RAPID_API_KEY),
+    //   }
+    //   ).pipe(map((response: any) => response['q'] as string));
+    return timer(2000).pipe(
+      map((x) => 'Response received')
+    );
   }
 
   getRapidAllImages(){
@@ -241,26 +244,30 @@ export class DataService {
     ));
   }
 
-  getOrderData():Observable<Order>{
+  getOrderData(id:number):Observable<Order>{
     return timer(2000).pipe(
       map((x) => ({
         orderId:1,
-        status:14
-      }))
+        status:14,
+        VehicleId:1,
+        custId:1
+      })),
+      tap(()=>console.log('Order Data API'))
     );
   }
-  getCustomerData():Observable<Customer>{
+  getCustomerData(orderId:number):Observable<Customer>{
     return timer(2000).pipe(
       map((x) => ({
-           custId:1,
+          custId:1,
           Email:'mywayorskyway@gmail.com',
           Telephone:'1234567890',
           Address:'Pune',
           Pin:'123456',
-      }))
+      })),
+      tap(()=>console.log('Customer Data API'))
     );
   }
-  getVehicleData():Observable<Vehicle>{
+  getVehicleData(orderId:number):Observable<Vehicle>{
     return timer(2000).pipe(
       map((x) => ({
         VehicleId:1,
@@ -268,20 +275,22 @@ export class DataService {
         OdometerReading:'',
         RegistrationDate:'20-Nov-2023',
         LastServiceDate:'22-Mar-2024'
-      }))
+      })),
+      tap(()=>console.log('Vechicle Data API'))
     );
   }
-  getOtherInfo():Observable<OtherInfo>{
+  getOtherInfo(orderId:number):Observable<OtherInfo>{
     return timer(2000).pipe(
       map((x) => ({
         Notes:'Notes here',
         LastModifiedBy: 'Admin'
-      }))
+      })),
+      tap(()=>console.log('OtherInfo Data API'))
     );
   }
   saveData(value:any){
-    return timer(2000).pipe(
-      tap(() => console.log('saving'))
+    return timer(3000).pipe(
+      tap(() => console.log('Data saved'))
     );
   }
 }
@@ -290,26 +299,40 @@ export interface Order
 {
   orderId:number;
   status:number;
-}
-export interface Customer
-{
   custId:number;
-  Email:string;
-  Telephone:string;
-  Address:string;
-  Pin:string;
-}
-export interface Vehicle
-{
   VehicleId:number;
-  VehicleNo:string;
-  OdometerReading:string;
-  RegistrationDate:string;
-  LastServiceDate:string;
+}
+// export interface Customer
+// {
+//   custId:number;
+//   Email:string;
+//   Telephone:string;
+//   Address:string;
+//   Pin:string;
+// }
+
+export class Customer{
+  custId=0;
+  Email='';
+  Telephone ='';
+  Address='';
+  Pin= '';
+  hasRights? =false;
 }
 
-export interface OtherInfo
+export class Vehicle
 {
-  Notes:string;
-  LastModifiedBy:string;
+  VehicleId=0;
+  VehicleNo='';
+  OdometerReading='';
+  RegistrationDate='';
+  LastServiceDate='';
+  hasRights? =false;
+}
+
+export class OtherInfo
+{
+  Notes='';
+  LastModifiedBy='';
+  hasRights? =false;
 }

@@ -58,6 +58,10 @@ export const Routes = [
     value: 'unsub',
   },
   {
+    text: 'Unsub Observables Angular 16',
+    value: 'unsub2',
+  },
+  {
     text: 'Refactoring',
     value: 'branching',
   },

@@ -105,14 +105,12 @@
     </div>
     </div>
     </fieldset>
+
     <footer>
-
-        <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid">Save</button>
-        <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="form.pristine || form.invalid">Discard</button>
-        <button mat-raised-button color="primary" (click)="refreshBtnClick()" >Refresh</button>
-    </footer>
-
-
+      <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="isSaveButtonClicked || !hasRights || form.pristine || form.invalid">Save</button>
+      <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="!hasRights || form.pristine || form.invalid">Discard</button>
+      <button mat-raised-button color="primary" (click)="refreshBtnClick()" >Refresh</button>
+  </footer>
 </form>
 
 </ng-container>

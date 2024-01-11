@@ -1,0 +1,38 @@
+<ng-container *ngIf="data$ | async">
+<form [formGroup]="form" >
+<fieldset>
+  <legend> <h2>Customer</h2></legend>
+  <div class="flex-parent">
+  <div class="flex-child">
+      <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="Email">
+          <mat-error *ngIf="Email?.errors?.required"></mat-error>
+      </mat-form-field>
+  </div>
+  <div class="flex-child">
+      <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Telephone</mat-label>
+          <input matInput placeholder="Telephone" formControlName="Telephone">
+          <mat-error *ngIf="Telephone?.errors?.required"></mat-error>
+      </mat-form-field>
+  </div>
+  </div>
+  <div class="flex-parent">
+      <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Address" formControlName="Address">
+              <mat-error *ngIf="Address?.errors?.required"></mat-error>
+          </mat-form-field>
+      </div>
+  <div class="flex-child">
+      <mat-form-field class="full-width" appearance="fill">
+          <mat-label>Pin</mat-label>
+          <input matInput placeholder="Pin" formControlName="Pin">
+          <mat-error *ngIf="Pin?.errors?.required"></mat-error>
+      </mat-form-field>
+  </div>
+  </div>
+  </fieldset>
+</form>
