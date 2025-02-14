@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { HTTP_INTERCEPTORS, provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 
 import {  routeslist } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,43 +27,35 @@ import { UserService } from './services/user.service';
 
 
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    InterceptorComponent,
-
-    LogoutComponent,
-  ],
-  imports: [
-    BrowserModule,
-    RouterModule.forRoot(routeslist,{preloadingStrategy:NoPreloading}),
-    BrowserAnimationsModule,
-    HttpClientModule,
-    AllMaterialModule,
-    NgContainerModule,
-    WhenUseHigherOrderOpeartorsModule,
-    CallbackHellModule,
-    UnsubObsModule,
-    // DashboardModule,
-    DesignPatternsModule,
-    BranchingModule,
-    MastersModule,
-    RxjsModule,
-    SearchTypeAheadModule,
-    // ControlValueAccessorModule,
-    FormsModule,
-    ReactiveFormsModule,
-  ],
-  providers: [
-    {
-      provide:HTTP_INTERCEPTORS,
-      useClass:AuthInterceptor,
-      multi:true
-    },
-    // UserService
-  ],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        InterceptorComponent,
+        LogoutComponent,
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        RouterModule.forRoot(routeslist, { preloadingStrategy: NoPreloading }),
+        BrowserAnimationsModule,
+        AllMaterialModule,
+        NgContainerModule,
+        WhenUseHigherOrderOpeartorsModule,
+        CallbackHellModule,
+        UnsubObsModule,
+        // DashboardModule,
+        DesignPatternsModule,
+        BranchingModule,
+        MastersModule,
+        RxjsModule,
+        SearchTypeAheadModule,
+        // ControlValueAccessorModule,
+        FormsModule,
+        ReactiveFormsModule], providers: [
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: AuthInterceptor,
+            multi: true
+        },
+        provideHttpClient(withInterceptorsFromDi()),
+    ] })
 export class AppModule { }
 function routes(routes: any): any[] | import("@angular/core").Type<any> | import("@angular/core").ModuleWithProviders<{}> {
   throw new Error('Function not implemented.');
