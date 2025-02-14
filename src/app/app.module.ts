@@ -16,7 +16,7 @@ import { MastersModule } from './masters/masters.module';
 import { RxjsModule } from './rxjs/rxjs.module';
 import { SearchTypeAheadModule } from './search-type-ahead/search-type-ahead.module';
 import { NoPreloading, PreloadAllModules, PreloadingStrategy, RouterModule, Routes } from '@angular/router';
-import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
+// import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
 import { LogoutComponent } from './logout/logout.component';
@@ -50,7 +50,7 @@ import { UserService } from './services/user.service';
     MastersModule,
     RxjsModule,
     SearchTypeAheadModule,
-    ControlValueAccessorModule,
+    // ControlValueAccessorModule,
     FormsModule,
     ReactiveFormsModule,
   ],
