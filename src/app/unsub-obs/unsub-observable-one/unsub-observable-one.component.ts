@@ -5,9 +5,10 @@ import { Blog } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-unsub-observable-one',
-  templateUrl: './unsub-observable-one.component.html',
-  styleUrls: ['./unsub-observable-one.component.scss'],
+    selector: 'app-unsub-observable-one',
+    templateUrl: './unsub-observable-one.component.html',
+    styleUrls: ['./unsub-observable-one.component.scss'],
+    standalone: false
 })
 export class UnsubObservableOneComponent implements OnInit {
   constructor(private service: DataService) {}

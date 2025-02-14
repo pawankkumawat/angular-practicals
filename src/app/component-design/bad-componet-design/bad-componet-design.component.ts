@@ -12,11 +12,10 @@ import { Subject } from 'rxjs';
 import { exhaustMap } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-bad-componet-design',
-  standalone: true,
-  imports: [CommonModule,ReactiveFormsModule,AllMaterialModule],
-  templateUrl: './bad-componet-design.component.html',
-  styleUrl: './bad-componet-design.component.scss'
+    selector: 'app-bad-componet-design',
+    imports: [CommonModule, ReactiveFormsModule, AllMaterialModule],
+    templateUrl: './bad-componet-design.component.html',
+    styleUrl: './bad-componet-design.component.scss'
 })
 export class BadComponetDesignComponent implements Candeactivate   {
 

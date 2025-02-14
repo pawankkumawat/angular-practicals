@@ -2,7 +2,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { State } from '../models/models';
 
 @Pipe({
-  name: 'state'
+    name: 'state',
+    standalone: false
 })
 export class StatePipe implements PipeTransform {
 

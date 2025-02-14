@@ -3,10 +3,10 @@ import { CompressImageProcessor, Processor } from '../image-process';
 
 
 @Component({
-  selector: 'app-c1',
-  templateUrl: './c1.component.html',
-  styleUrls: ['./c1.component.scss'],
-  
+    selector: 'app-c1',
+    templateUrl: './c1.component.html',
+    styleUrls: ['./c1.component.scss'],
+    standalone: false
 })
 export class C1Component implements OnInit {
   constructor() {}

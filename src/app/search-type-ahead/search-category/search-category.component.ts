@@ -5,9 +5,10 @@ import { State } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-search-category',
-  templateUrl: './search-category.component.html',
-  styleUrls: ['./search-category.component.scss']
+    selector: 'app-search-category',
+    templateUrl: './search-category.component.html',
+    styleUrls: ['./search-category.component.scss'],
+    standalone: false
 })
 export class SearchCategoryComponent implements OnInit {
 

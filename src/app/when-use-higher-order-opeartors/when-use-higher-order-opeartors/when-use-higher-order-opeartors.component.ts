@@ -6,9 +6,10 @@ import { Blog } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-when-use-higher-order-opeartors',
-  templateUrl: './when-use-higher-order-opeartors.component.html',
-  styleUrls: ['./when-use-higher-order-opeartors.component.scss'],
+    selector: 'app-when-use-higher-order-opeartors',
+    templateUrl: './when-use-higher-order-opeartors.component.html',
+    styleUrls: ['./when-use-higher-order-opeartors.component.scss'],
+    standalone: false
 })
 export class WhenUseHigherOrderOpeartorsComponent implements OnInit {
   constructor(private service: DataService) {}

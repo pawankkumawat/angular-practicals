@@ -4,9 +4,10 @@ import { tap, concatMap, mergeMap, switchMap, flatMap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-callback-hell',
-  templateUrl: './callback-hell.component.html',
-  styleUrls: ['./callback-hell.component.scss'],
+    selector: 'app-callback-hell',
+    templateUrl: './callback-hell.component.html',
+    styleUrls: ['./callback-hell.component.scss'],
+    standalone: false
 })
 export class CallbackHellComponent implements OnInit {
   constructor(private service: DataService) {}

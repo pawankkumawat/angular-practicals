@@ -5,10 +5,10 @@ import { DataService } from 'src/app/services/data.service';
 import { SnackbarService } from 'src/app/services/snackbar.service';
 
 @Component({
-  selector: 'app-interceptor',
-  templateUrl: './interceptor.component.html',
-  styles: [
-  ]
+    selector: 'app-interceptor',
+    templateUrl: './interceptor.component.html',
+    styles: [],
+    standalone: false
 })
 export class InterceptorComponent implements OnInit {
   

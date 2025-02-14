@@ -4,10 +4,10 @@ import { map } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-mergemap',
-  templateUrl: './mergemap.component.html',
-  styles: [
-  ]
+    selector: 'app-mergemap',
+    templateUrl: './mergemap.component.html',
+    styles: [],
+    standalone: false
 })
 export class MergemapComponent implements OnInit {
 

@@ -6,9 +6,10 @@ import {
 } from '../image-process';
 
 @Component({
-  selector: 'app-tightly-coupled',
-  templateUrl: './tightly-coupled.component.html',
-  styleUrls: ['./tightly-coupled.component.scss'],
+    selector: 'app-tightly-coupled',
+    templateUrl: './tightly-coupled.component.html',
+    styleUrls: ['./tightly-coupled.component.scss'],
+    standalone: false
 })
 export class TightlyCoupledComponent implements OnInit {
   constructor() {}

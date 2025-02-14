@@ -4,11 +4,10 @@ import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDi
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
 
 @Component({
-  selector: 'app-confirm',
-  standalone: true,
-  imports: [AllMaterialModule],
-  templateUrl: './confirm.component.html',
-  styleUrl: './confirm.component.scss',
+    selector: 'app-confirm',
+    imports: [AllMaterialModule],
+    templateUrl: './confirm.component.html',
+    styleUrl: './confirm.component.scss'
 })
 export class ConfirmComponent {
   constructor(public dialogRef: MatDialogRef<ConfirmComponent>) {}

@@ -7,14 +7,13 @@ import { AllMaterialModule } from 'src/app/angular-material/all-material-module'
 import { OtherInfo } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-other',
-  standalone: true,
-  imports: [
-    CommonModule,ReactiveFormsModule,AllMaterialModule
-  ],
-  styleUrl: './other.component.css',
-  templateUrl: './other.component.html',
-  changeDetection:ChangeDetectionStrategy.OnPush
+    selector: 'app-other',
+    imports: [
+        CommonModule, ReactiveFormsModule, AllMaterialModule
+    ],
+    styleUrl: './other.component.css',
+    templateUrl: './other.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class OtherComponent {
     @Input() data$!:Observable<OtherInfo>;

@@ -5,11 +5,10 @@ import { GoodComponentDesignComponent } from '../good-component-design.component
 import { of } from 'rxjs';
 
 @Component({
-  selector: 'app-container',
-  standalone: true,
-  imports: [AllMaterialModule,WrapperComponent,GoodComponentDesignComponent],
-  templateUrl: './container.component.html',
-  styleUrl: './container.component.scss'
+    selector: 'app-container',
+    imports: [AllMaterialModule, WrapperComponent, GoodComponentDesignComponent],
+    templateUrl: './container.component.html',
+    styleUrl: './container.component.scss'
 })
 export class ContainerComponent {
   footerConfig$= of()

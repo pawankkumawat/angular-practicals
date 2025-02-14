@@ -9,17 +9,15 @@ import { UserService } from 'src/app/services/user.service';
 import { SharedC1Component } from 'src/app/shared/shared-c1/shared-c1.component';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.scss'],
-
-  standalone: true,
-  imports: [CommonModule,
-    ReactiveFormsModule,
-    FormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    SharedC1Component],
+    selector: 'app-dashboard',
+    templateUrl: './dashboard.component.html',
+    styleUrls: ['./dashboard.component.scss'],
+    imports: [CommonModule,
+        ReactiveFormsModule,
+        FormsModule,
+        MatFormFieldModule,
+        MatInputModule,
+        SharedC1Component]
 })
 export class DashboardComponent implements OnInit {
 

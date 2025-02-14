@@ -3,9 +3,10 @@ import { Observable } from 'rxjs';
 import { BestPracticesService } from './best-practices.service';
 
 @Component({
-  selector: 'app-subject-on-service',
-  templateUrl: './subject-on-service.component.html',
-  styleUrls: ['./subject-on-service.component.scss'],
+    selector: 'app-subject-on-service',
+    templateUrl: './subject-on-service.component.html',
+    styleUrls: ['./subject-on-service.component.scss'],
+    standalone: false
 })
 export class SubjectOnServiceComponent implements OnInit {
   message$!: Observable<string>;

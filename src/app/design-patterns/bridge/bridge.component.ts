@@ -3,9 +3,9 @@ import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms
 import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
-  templateUrl: './bridge.component.html',
-  styles: [
-  ]
+    templateUrl: './bridge.component.html',
+    styles: [],
+    standalone: false
 })
 export class BridgeComponent implements OnInit {
   isLinear = false;

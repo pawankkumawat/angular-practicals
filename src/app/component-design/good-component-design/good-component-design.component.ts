@@ -17,11 +17,10 @@ import { ConfigService } from './config.service';
 import { Candeactivate } from 'src/app/guards/candeactivate.guard';
 
 @Component({
-  selector: 'app-good-component-design',
-  standalone: true,
-  imports: [CommonModule,CustomerComponent, OtherComponent, VehicleComponent,AllMaterialModule,WrapperComponent,ReactiveFormsModule],
-  templateUrl: './good-component-design.component.html',
-  styleUrl: './good-component-design.component.scss',
+    selector: 'app-good-component-design',
+    imports: [CommonModule, CustomerComponent, OtherComponent, VehicleComponent, AllMaterialModule, WrapperComponent, ReactiveFormsModule],
+    templateUrl: './good-component-design.component.html',
+    styleUrl: './good-component-design.component.scss'
 })
 export class GoodComponentDesignComponent implements OnInit, Candeactivate  {
 

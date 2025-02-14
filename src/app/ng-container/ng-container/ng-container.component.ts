@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { Food } from 'src/app/models/models';
 
 @Component({
-  selector: 'app-ng-container',
-  templateUrl: './ng-container.component.html',
-  styleUrls: ['./ng-container.component.scss']
+    selector: 'app-ng-container',
+    templateUrl: './ng-container.component.html',
+    styleUrls: ['./ng-container.component.scss'],
+    standalone: false
 })
 export class NgContainerComponent implements OnInit {
 

@@ -5,8 +5,9 @@ import { map, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
+    selector: 'app-dialog',
+    templateUrl: './dialog.component.html',
+    standalone: false
 })
 export class DialogComponent{
   data$!: Observable<string>;

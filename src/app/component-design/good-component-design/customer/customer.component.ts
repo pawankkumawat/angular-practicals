@@ -7,14 +7,13 @@ import { AllMaterialModule } from 'src/app/angular-material/all-material-module'
 import { Customer } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-customer',
-  standalone: true,
-  imports: [
-    CommonModule,ReactiveFormsModule,AllMaterialModule
-  ],
-  styleUrl: './customer.component.css',
-  templateUrl: './customer.component.html',
-  changeDetection:ChangeDetectionStrategy.OnPush,
+    selector: 'app-customer',
+    imports: [
+        CommonModule, ReactiveFormsModule, AllMaterialModule
+    ],
+    styleUrl: './customer.component.css',
+    templateUrl: './customer.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CustomerComponent  {
     @Input() data$!:Observable<Customer>;

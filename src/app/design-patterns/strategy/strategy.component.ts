@@ -5,9 +5,10 @@ import { RouterdataService } from 'src/app/services/routerdata.service';
 import { Strategy, StrategyMap } from './strategies';
 
 @Component({
-  selector: 'app-strategy',
-  templateUrl: './strategy.component.html',
-  styleUrls: ['./strategy.component.scss'],
+    selector: 'app-strategy',
+    templateUrl: './strategy.component.html',
+    styleUrls: ['./strategy.component.scss'],
+    standalone: false
 })
 export class StrategyComponent implements OnInit {
   isChecked =true;//default value

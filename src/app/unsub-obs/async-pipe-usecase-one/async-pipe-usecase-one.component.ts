@@ -5,9 +5,10 @@ import {
 import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
-  selector: 'app-async-pipe-usecase-one',
-  templateUrl: './async-pipe-usecase-one.component.html',
-  styles: [],
+    selector: 'app-async-pipe-usecase-one',
+    templateUrl: './async-pipe-usecase-one.component.html',
+    styles: [],
+    standalone: false
 })
 export class AsyncPipeUsecaseOneComponent {
 

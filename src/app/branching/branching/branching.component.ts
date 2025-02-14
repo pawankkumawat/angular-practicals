@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { BranchingDataObj } from 'src/app/constants/constant';
 
 @Component({
-  selector: 'app-branching',
-  templateUrl: './branching.component.html',
-  styleUrls: ['./branching.component.scss'],
+    selector: 'app-branching',
+    templateUrl: './branching.component.html',
+    styleUrls: ['./branching.component.scss'],
+    standalone: false
 })
 export class BranchingComponent implements OnInit {
   constructor() {}

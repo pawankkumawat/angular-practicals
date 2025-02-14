@@ -8,9 +8,10 @@ import { CountService, RightsService } from '../../services/rights.service';
 import { EventLoggerService } from './event-logger.service';
 
 @Component({
-  selector: 'app-whats-di',
-  templateUrl: './whats-di.component.html',
-  styleUrls: ['./whats-di.component.scss'],
+    selector: 'app-whats-di',
+    templateUrl: './whats-di.component.html',
+    styleUrls: ['./whats-di.component.scss'],
+    standalone: false
 })
 export class WhatsDiComponent implements OnInit {
   constructor(private loggerService:ConsoleLoggerService) {

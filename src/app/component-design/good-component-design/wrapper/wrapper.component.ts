@@ -10,11 +10,10 @@ import { CustomerComponent } from '../customer/customer.component';
 import { OtherComponent } from '../other/other.component';
 
 @Component({
-  selector: 'app-wrapper',
-  standalone: true,
-  imports: [CommonModule, AllMaterialModule,VehicleComponent,CustomerComponent,OtherComponent],
-  templateUrl: './wrapper.component.html',
-  styleUrl: './wrapper.component.scss'
+    selector: 'app-wrapper',
+    imports: [CommonModule, AllMaterialModule, VehicleComponent, CustomerComponent, OtherComponent],
+    templateUrl: './wrapper.component.html',
+    styleUrl: './wrapper.component.scss'
 })
 export class WrapperComponent{
 

@@ -4,9 +4,10 @@ import { BehaviorSubject, Subject } from 'rxjs';
 import { SubBehaveSubService } from '../sub-behave-sub.service';
 
 @Component({
-  selector: 'app-subject-behavior-subject',
-  templateUrl: './subject-behavior-subject.component.html',
-  styleUrls: ['./subject-behavior-subject.component.scss']
+    selector: 'app-subject-behavior-subject',
+    templateUrl: './subject-behavior-subject.component.html',
+    styleUrls: ['./subject-behavior-subject.component.scss'],
+    standalone: false
 })
 export class SubjectBehaviorSubjectComponent implements OnInit {
   // subject = new BehaviorSubject<string>('Frist');

@@ -7,14 +7,13 @@ import { AllMaterialModule } from 'src/app/angular-material/all-material-module'
 import { Vehicle } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-vehicle',
-  standalone: true,
-  imports: [
-    CommonModule,ReactiveFormsModule,AllMaterialModule
-  ],
-  styleUrl: './vehicle.component.css',
-  templateUrl: './vehicle.component.html',
-  changeDetection:ChangeDetectionStrategy.OnPush,
+    selector: 'app-vehicle',
+    imports: [
+        CommonModule, ReactiveFormsModule, AllMaterialModule
+    ],
+    styleUrl: './vehicle.component.css',
+    templateUrl: './vehicle.component.html',
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class VehicleComponent {
     @Input() data$!:Observable<Vehicle>;

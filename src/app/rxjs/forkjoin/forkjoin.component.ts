@@ -6,9 +6,9 @@ import { NameValuePair, ReportData } from 'src/app/models/models';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-forkjoin',
-  templateUrl: './forkjoin.component.html',
-   
+    selector: 'app-forkjoin',
+    templateUrl: './forkjoin.component.html',
+    standalone: false
 })
 export class ForkjoinComponent implements OnInit {
     form!:UntypedFormGroup;

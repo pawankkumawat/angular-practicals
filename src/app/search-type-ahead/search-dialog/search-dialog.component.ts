@@ -4,10 +4,10 @@ import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-search-dialog',
-  templateUrl: './search-dialog.component.html',
-  styles: [
-  ]
+    selector: 'app-search-dialog',
+    templateUrl: './search-dialog.component.html',
+    styles: [],
+    standalone: false
 })
 export class SearchDialogComponent implements OnInit {
   @ViewChild('search', { static: true }) search!: ElementRef;

@@ -6,9 +6,10 @@ import { DataService } from 'src/app/services/data.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
-  selector: 'app-coutry',
-  templateUrl: './coutry.component.html',
-  styleUrls: ['./coutry.component.scss'],
+    selector: 'app-coutry',
+    templateUrl: './coutry.component.html',
+    styleUrls: ['./coutry.component.scss'],
+    standalone: false
 })
 export class CountryComponent implements OnInit {
   form!: UntypedFormGroup;

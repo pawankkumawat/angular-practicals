@@ -5,11 +5,10 @@ import { DataService } from 'src/app/services/data.service';
 import { takeUntilDestroyed,toSignal} from  '@angular/core/rxjs-interop';
 import { CommonModule } from '@angular/common';
 @Component({
-  selector: 'app-unsub-observable-two',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './unsub-observable-two.component.html',
-  styleUrl: './unsub-observable-two.component.scss',
+    selector: 'app-unsub-observable-two',
+    imports: [CommonModule],
+    templateUrl: './unsub-observable-two.component.html',
+    styleUrl: './unsub-observable-two.component.scss'
 })
 export class UnsubObservableTwoComponent implements OnDestroy {
   // private unsub = new Subject<void>();

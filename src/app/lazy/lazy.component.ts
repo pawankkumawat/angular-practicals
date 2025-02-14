@@ -3,9 +3,10 @@ import { DataService } from '../services/data.service';
 import { UserService } from '../services/user.service';
 
 @Component({
-  selector: 'app-lazy',
-  templateUrl: './lazy.component.html',
-  styleUrls: ['./lazy.component.scss']
+    selector: 'app-lazy',
+    templateUrl: './lazy.component.html',
+    styleUrls: ['./lazy.component.scss'],
+    standalone: false
 })
 export class LazyComponent implements OnInit {
   constructor(private userService:UserService) { }

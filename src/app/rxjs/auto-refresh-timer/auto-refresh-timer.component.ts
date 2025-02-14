@@ -4,9 +4,10 @@ import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-  selector: 'app-auto-refresh-timer',
-  templateUrl: './auto-refresh-timer.component.html',
-  styleUrls: ['./auto-refresh-timer.component.scss']
+    selector: 'app-auto-refresh-timer',
+    templateUrl: './auto-refresh-timer.component.html',
+    styleUrls: ['./auto-refresh-timer.component.scss'],
+    standalone: false
 })
 export class AutoRefreshTimerComponent implements OnInit,OnDestroy {
 
