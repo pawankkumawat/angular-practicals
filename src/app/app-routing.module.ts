@@ -17,6 +17,10 @@ import { WrapperComponent } from './component-design/good-component-design/wrapp
 export const routeslist: Routes = [
 
   {
+    path: 'signals',
+    loadComponent: () => import('./signals/signals.component').then(m => m.SignalsComponent)
+  },
+  {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
   },

@@ -18,7 +18,7 @@ import { Candeactivate } from 'src/app/guards/candeactivate.guard';
 
 @Component({
     selector: 'app-good-component-design',
-    imports: [CommonModule, CustomerComponent, OtherComponent, VehicleComponent, AllMaterialModule, WrapperComponent, ReactiveFormsModule],
+    imports: [CommonModule, CustomerComponent, OtherComponent, VehicleComponent, AllMaterialModule,  ReactiveFormsModule],
     templateUrl: './good-component-design.component.html',
     styleUrl: './good-component-design.component.scss'
 })

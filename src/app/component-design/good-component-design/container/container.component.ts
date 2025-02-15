@@ -6,7 +6,7 @@ import { of } from 'rxjs';
 
 @Component({
     selector: 'app-container',
-    imports: [AllMaterialModule, WrapperComponent, GoodComponentDesignComponent],
+    imports: [AllMaterialModule],
     templateUrl: './container.component.html',
     styleUrl: './container.component.scss'
 })

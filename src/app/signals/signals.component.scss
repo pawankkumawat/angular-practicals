@@ -1,0 +1,24 @@
+.selected-row {
+    background-color: #f0f8ff; /* Light blue background */
+    color: #000; /* Black text color */
+    font-weight: bold; /* Bold text */
+}
+
+.text-right {
+    text-align: right !important;
+    justify-content: flex-end !important; /* Ensure Flexbox alignment */
+}
+
+th.mat-header-cell.cdk-column-OrderNumber.mat-column-OrderNumber,
+td.mat-cell.cdk-column-OrderNumber.mat-column-OrderNumber {
+    text-align: right !important;
+    justify-content: flex-end !important; /* Ensure Flexbox alignment */
+    padding-right: 16px; /* Adjust padding as needed */
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1; /* Ensure the header is above other content */
+    background-color: white; /* Ensure the header has a background color */
+}

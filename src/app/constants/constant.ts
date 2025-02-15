@@ -46,6 +46,10 @@ export const Routes = [
     value: 'strategy',
   },
   {
+    text: 'Signals',
+    value: 'signals',
+  },
+  {
     text: 'Bridge Pattern',
     value: 'bridge',
   },
