@@ -1,4 +1,4 @@
-.example-container {
+.app-container {
     display: flex;
     flex-direction: column;
     position: absolute;
@@ -14,17 +14,17 @@
     z-index: 2;
   }
 
-  h1.example-app-name {
+  h1.app-name {
     margin-left: 8px;
   }
 
-  .example-sidenav-container {
+  .sidenav-container {
     /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
        causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
     flex: 1;
   }
 
-  .example-is-mobile .example-sidenav-container {
+  .example-is-mobile .sidenav-container {
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
@@ -36,11 +36,25 @@
     height: 100%;
   }
 
-  .example-card {
+  .card {
     max-width: 100%;
   }
+  .mat-mdc-card-content:last-child{
+    padding-bottom: 0px;
+  }
+
 
   .example-header-image {
     background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
     background-size: cover;
   }
+
+
+  .mdc-list {
+    margin: 0;
+    padding-right: 32px;
+  }
+
+  // mat-sidenav{
+  //   margin-bottom:55px;
+  // }

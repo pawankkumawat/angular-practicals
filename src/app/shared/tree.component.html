@@ -1,0 +1,20 @@
+<mat-tree #tree [dataSource]="dataSource" [childrenAccessor]="childrenAccessor">
+    <!-- This is the tree node template for leaf nodes -->
+    <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+      <!-- use a disabled button to provide padding for tree leaf -->
+      <button mat-icon-button disabled (click)="onRouteClick(node?.value,node?.text)"></button>
+      <a href="javascript:void(0)" (click)="onRouteClick(node?.value,node?.text)" >{{node.name}}</a>
+    </mat-tree-node>
+    <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding matTreeNodeToggle
+                   [cdkTreeNodeTypeaheadLabel]="node.name">
+      <button mat-icon-button matTreeNodeToggle
+              [attr.aria-label]="'Toggle ' + node.name" (click)="onRouteClick(node?.value,node?.text)">
+        <mat-icon class="mat-icon-rtl-mirror">
+          {{tree.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+        </mat-icon>
+      </button>
+      <a href="javascript:void(0)" (click)="onRouteClick(node?.value,node?.text)" >{{node.name}}</a>
+      
+    </mat-tree-node>
+  </mat-tree>
+  

@@ -13,7 +13,8 @@ import { Customer } from 'src/app/services/data.service';
     ],
     styleUrl: './customer.component.css',
     templateUrl: './customer.component.html',
-    changeDetection: ChangeDetectionStrategy.OnPush
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone:true
 })
 export class CustomerComponent  {
     @Input() data$!:Observable<Customer>;

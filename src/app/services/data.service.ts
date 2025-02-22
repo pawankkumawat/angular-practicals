@@ -252,7 +252,7 @@ export class DataService {
         VehicleId:1,
         custId:1
       })),
-      tap(()=>console.log('Order Data API'))
+      // tap(()=>console.log('Order Data API'))
     );
   }
   getCustomerData(orderId:number):Observable<Customer>{
@@ -264,7 +264,7 @@ export class DataService {
           Address:'Pune',
           Pin:'123456',
       })),
-      tap(()=>console.log('Customer Data API'))
+      // tap(()=>console.log('Customer Data API'))
     );
   }
   getVehicleData(orderId:number):Observable<Vehicle>{
@@ -276,7 +276,7 @@ export class DataService {
         RegistrationDate:'20-Nov-2023',
         LastServiceDate:'22-Mar-2024'
       })),
-      tap(()=>console.log('Vechicle Data API'))
+      // tap(()=>console.log('Vechicle Data API'))
     );
   }
   getOtherInfo(orderId:number):Observable<OtherInfo>{
@@ -285,12 +285,12 @@ export class DataService {
         Notes:'Notes here',
         LastModifiedBy: 'Admin'
       })),
-      tap(()=>console.log('OtherInfo Data API'))
+      // tap(()=>console.log('OtherInfo Data API'))
     );
   }
   saveData(value:any){
     return timer(3000).pipe(
-      tap(() => console.log('Data saved'))
+      // tap(() => console.log('Data saved'))
     );
   }
 }

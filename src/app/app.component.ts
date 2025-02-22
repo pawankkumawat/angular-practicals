@@ -14,7 +14,7 @@ import { RouterdataService } from './services/routerdata.service';
 export class AppComponent {
   mobileQuery: MediaQueryList;
   header = 'Dashboard';
-  fillerNav = Routes;
+  // fillerNav = Routes;
 
   private _mobileQueryListener: () => void;
  routeData$!:Observable<any>;
@@ -35,10 +35,10 @@ export class AppComponent {
     this.mobileQuery.removeListener(this._mobileQueryListener);
   }
 
-  onRouteClick(route: string, text: string) {
-    this.header = text;
-    this.router.navigateByUrl(`/${route}`);
-  }
+  // onRouteClick(route: string, text: string) {
+  //   this.header = text;
+  //   this.router.navigateByUrl(`/${route}`);
+  // }
   shouldRun = /(^|.)(stackblitz|webcontainer).(io|com)$/.test(
     window.location.host
   );

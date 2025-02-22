@@ -13,6 +13,8 @@ import {  GoodComponentDesignComponent } from './component-design/good-component
 import { ContainerComponent } from './component-design/good-component-design/container/container.component';
 import { UnsubObservableTwoComponent } from './unsub-obs/unsub-observable-two/unsub-observable-two.component';
 import { WrapperComponent } from './component-design/good-component-design/wrapper/wrapper.component';
+import { CustomerFooterComponent } from './component-design/customer-footer/customer-footer.component';
+import { VehicleFooterComponent } from './component-design/vehicle-footer/vehicle-footer.component';
 
 export const routeslist: Routes = [
 
@@ -54,6 +56,16 @@ export const routeslist: Routes = [
   {
     path: 'good/:id',
     component: GoodComponentDesignComponent,
+    canDeactivate:[candeactivateGuard]
+  },
+  {
+    path: 'custfoot',
+    component: CustomerFooterComponent,
+    canDeactivate:[candeactivateGuard]
+  },
+  {
+    path: 'vehclefoot',
+    component: VehicleFooterComponent,
     canDeactivate:[candeactivateGuard]
   },
   {

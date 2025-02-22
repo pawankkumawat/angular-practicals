@@ -21,7 +21,7 @@ import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
 import { LogoutComponent } from './logout/logout.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { UserService } from './services/user.service';
+import { TreeNestedChildAccessorOverviewExample } from './shared/tree.component';
 
 
 
@@ -31,8 +31,10 @@ import { UserService } from './services/user.service';
         AppComponent,
         InterceptorComponent,
         LogoutComponent,
+        
     ],
-    bootstrap: [AppComponent], imports: [BrowserModule,
+    bootstrap: [AppComponent], imports: [
+        BrowserModule,
         RouterModule.forRoot(routeslist, { preloadingStrategy: NoPreloading }),
         BrowserAnimationsModule,
         AllMaterialModule,
@@ -48,6 +50,7 @@ import { UserService } from './services/user.service';
         SearchTypeAheadModule,
         // ControlValueAccessorModule,
         FormsModule,
+        TreeNestedChildAccessorOverviewExample,
         ReactiveFormsModule], providers: [
         {
             provide: HTTP_INTERCEPTORS,

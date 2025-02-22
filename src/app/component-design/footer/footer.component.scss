@@ -1,0 +1,27 @@
+.actions {
+    position: sticky;
+    bottom: 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    /* Optional: Add shadow */
+    z-index: 10;
+    justify-content: center;
+    background-color: darkgrey;
+
+    .btns {
+        margin-top: 1px;
+        margin-bottom: 1px;
+    }
+
+    .button-row {
+        display: table-cell;
+        max-width: 600px;
+
+
+    }
+
+    button:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+
