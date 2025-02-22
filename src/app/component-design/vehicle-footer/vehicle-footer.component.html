@@ -5,21 +5,17 @@
 </ng-template>
 <div class="container-content-footer">
     <ng-container *ngIf="data$ | async as data else loading">
-        <!-- <app-customer  [data$]="customer$" (onCustomerFormEmitter)="onCustomerFormHandler($event)"></app-customer> -->
         <app-vehicle [data$]="vehicle$" (onVehicleFormEmitter)="onVehicleFormHandler($event)"></app-vehicle>
-        <!-- <app-other [data$]="other$" (onOtherFormEmitter)="onOtherFormHandler($event)"></app-other> -->
-        <!-- <footer>
-        <button mat-raised-button color="primary" (click)="save()" [disabled]="saveButtonStatus$ | async" >Save</button>
-        <button mat-raised-button color="primary" (click)="discard()" [disabled]="discardBtnStatus$ | async" >Discard</button>
-        <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
-    </footer> -->
     </ng-container>
-    <!-- <mat-card-actions class="actions">
+    <!-- Footer Section Starts -->
+    <mat-card-actions class="actions">
         <div class="btns button-row">
             <button mat-raised-button color="primary" (click)="save()">Save</button>
             <button mat-raised-button color="primary" (click)="discard()">Discard</button>
             <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
         </div>
-    </mat-card-actions> -->
-    <app-footer></app-footer>
+    </mat-card-actions>
+    <!-- Footer Section Ends -->
+    <!-- <app-footer (onSave)="save()" (onDiscard)="discard()" (onRefresh)="refresh()"></app-footer> -->
+     <app-footer></app-footer>
 </div>
