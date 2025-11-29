@@ -1,21 +1,20 @@
 <h1>Vehicle Component</h1>
 <mat-divider></mat-divider>
-<ng-template #loading>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
 <div class="container-content-footer">
-    <ng-container *ngIf="data$ | async as data else loading">
-        <app-vehicle [data$]="vehicle$" (onVehicleFormEmitter)="onVehicleFormHandler($event)"></app-vehicle>
-    </ng-container>
-    <!-- Footer Section Starts -->
-    <mat-card-actions class="actions">
-        <div class="btns button-row">
-            <button mat-raised-button color="primary" (click)="save()">Save</button>
-            <button mat-raised-button color="primary" (click)="discard()">Discard</button>
-            <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
-        </div>
-    </mat-card-actions>
-    <!-- Footer Section Ends -->
-    <!-- <app-footer (onSave)="save()" (onDiscard)="discard()" (onRefresh)="refresh()"></app-footer> -->
-     <app-footer></app-footer>
+  @if (data$ | async; as data) {
+    <app-vehicle [data$]="vehicle$" (onVehicleFormEmitter)="onVehicleFormHandler($event)"></app-vehicle>
+  } @else {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }
+  <!-- Footer Section Starts -->
+  <mat-card-actions class="actions">
+    <div class="btns button-row">
+      <button mat-raised-button color="primary" (click)="save()">Save</button>
+      <button mat-raised-button color="primary" (click)="discard()">Discard</button>
+      <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+    </div>
+  </mat-card-actions>
+  <!-- Footer Section Ends -->
+  <!-- <app-footer (onSave)="save()" (onDiscard)="discard()" (onRefresh)="refresh()"></app-footer> -->
+  <app-footer></app-footer>
 </div>

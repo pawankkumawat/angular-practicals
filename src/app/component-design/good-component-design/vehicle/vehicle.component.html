@@ -1,44 +1,48 @@
 
-<ng-container *ngIf="data$ | async">
-<form [formGroup]="form">
-  <fieldset>
-    <legend> <h2>Vehicle</h2></legend>
-    <div class="flex-parent">
+@if (data$ | async) {
+  <form [formGroup]="form">
+    <fieldset>
+      <legend> <h2>Vehicle</h2></legend>
+      <div class="flex-parent">
         <div class="flex-child">
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>VehicleNo</mat-label>
-                <input matInput placeholder="VehicleNo" formControlName="VehicleNo">
-                <mat-error *ngIf="VehicleNo?.errors?.required"></mat-error>
-            </mat-form-field>
-        </div>
-    <div class="flex-child">
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>OdometerReading</mat-label>
-            <input matInput placeholder="OdometerReading" formControlName="OdometerReading">
-            <mat-error *ngIf="OdometerReading?.errors?.required"></mat-error>
-        </mat-form-field>
-    </div>
-    </div>
-
-    <div class="flex-parent">
-        <div class="flex-child">
-
           <mat-form-field class="full-width" appearance="fill">
-              <mat-label>Registration Date</mat-label>
-              <input matInput placeholder="Registration Date" formControlName="RegistrationDate">
-              <mat-error *ngIf="RegistrationDate?.errors?.required"></mat-error>
+            <mat-label>VehicleNo</mat-label>
+            <input matInput placeholder="VehicleNo" formControlName="VehicleNo">
+            @if (VehicleNo?.errors?.required) {
+              <mat-error></mat-error>
+            }
           </mat-form-field>
         </div>
-    <div class="flex-child">
-
-      <mat-form-field class="full-width" appearance="fill">
-          <mat-label>LastService Date</mat-label>
-          <input matInput placeholder="LastService Date" formControlName="LastServiceDate">
-          <mat-error *ngIf="LastServiceDate?.errors?.required"></mat-error>
-      </mat-form-field>
-    </div>
-    </div>
-
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>OdometerReading</mat-label>
+            <input matInput placeholder="OdometerReading" formControlName="OdometerReading">
+            @if (OdometerReading?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Registration Date</mat-label>
+            <input matInput placeholder="Registration Date" formControlName="RegistrationDate">
+            @if (RegistrationDate?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>LastService Date</mat-label>
+            <input matInput placeholder="LastService Date" formControlName="LastServiceDate">
+            @if (LastServiceDate?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
     </fieldset>
-</form>
-</ng-container>
+  </form>
+}

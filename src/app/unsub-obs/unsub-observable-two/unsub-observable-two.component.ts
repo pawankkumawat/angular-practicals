@@ -3,10 +3,10 @@ import { Subject, timer } from 'rxjs';
 import { concatMap, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
 import { takeUntilDestroyed,toSignal} from  '@angular/core/rxjs-interop';
-import { CommonModule } from '@angular/common';
+
 @Component({
     selector: 'app-unsub-observable-two',
-    imports: [CommonModule],
+    imports: [],
     templateUrl: './unsub-observable-two.component.html',
     styleUrl: './unsub-observable-two.component.scss'
 })

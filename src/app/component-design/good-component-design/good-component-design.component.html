@@ -1,18 +1,17 @@
 
 <h1>Good Component Design</h1>
 <mat-divider></mat-divider>
-<ng-template #loading>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf="data$ | async as data else loading">
-    <ng-container>
+@if (data$ | async; as data) {
+  <ng-container>
     <app-customer  [data$]="customer$" (onCustomerFormEmitter)="onCustomerFormHandler($event)"></app-customer>
     <app-vehicle  [data$]="vehicle$" (onVehicleFormEmitter)="onVehicleFormHandler($event)"></app-vehicle>
     <app-other [data$]="other$" (onOtherFormEmitter)="onOtherFormHandler($event)"></app-other>
     <footer>
-        <button mat-raised-button color="primary" (click)="save()" [disabled]="saveButtonStatus$ | async" >Save</button>
-        <button mat-raised-button color="primary" (click)="discard()" [disabled]="discardBtnStatus$ | async" >Discard</button>
-        <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
+      <button mat-raised-button color="primary" (click)="save()" [disabled]="saveButtonStatus$ | async" >Save</button>
+      <button mat-raised-button color="primary" (click)="discard()" [disabled]="discardBtnStatus$ | async" >Discard</button>
+      <button mat-raised-button color="primary" (click)="refresh()">Refresh</button>
     </footer>
-</ng-container>
-</ng-container>
+  </ng-container>
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}

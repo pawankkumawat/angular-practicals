@@ -1,2 +1,4 @@
 <input type="text" #search>
-<div *ngFor="let state of States">{{state.text}}</div>
+@for (state of States; track state) {
+  <div>{{state.text}}</div>
+}

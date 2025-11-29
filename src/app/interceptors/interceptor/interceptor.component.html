@@ -1,10 +1,9 @@
 <h1>Http Interceptor</h1>
-<ng-template #loading>
+@if ( data$ | async; as data) {
+  <mat-form-field appearance="fill">
+    <mat-label>Text</mat-label>
+    <input matInput [value]="data">
+  </mat-form-field>
+} @else {
   <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf=" data$ | async as data else  loading">
-    <mat-form-field appearance="fill">
-        <mat-label>Text</mat-label>
-        <input matInput [value]="data">
-    </mat-form-field>
-</ng-container>
+}

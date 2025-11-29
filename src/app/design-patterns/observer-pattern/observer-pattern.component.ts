@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, inject } from '@angular/core';
 
 export interface ISubject<T> {
@@ -76,7 +76,7 @@ export class SMSObserver implements IObserver<{ name: string, age: number }> {
   templateUrl: './observer-pattern.component.html',
   styleUrl: './observer-pattern.component.scss',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
 
 })
 export class ObserverPatternComponent {

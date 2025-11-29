@@ -1,31 +1,30 @@
 <!-- <ng-container *ngIf="data$|async as user else loading">
-    <form class="form">
-        <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Name</mat-label>
-          <input matInput placeholder="Ex. Pizza" value="{{user.name}}">
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Age</mat-label>
-            <input matInput placeholder="Ex. Pizza" value=" {{user.age}}">
-          </mat-form-field>
-          </form>
+<form class="form">
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Ex. Pizza" value="{{user.name}}">
+  </mat-form-field>
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Age</mat-label>
+    <input matInput placeholder="Ex. Pizza" value=" {{user.age}}">
+  </mat-form-field>
+</form>
 </ng-container> -->
-<ng-template #loading>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf="blog else loading">
-    <form class="form">
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Title</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="{{blog.title}}">
-        </mat-form-field>
-        <mat-form-field class="full-width" appearance="fill">
-            <mat-label>Category</mat-label>
-            <input matInput placeholder="Ex. Pizza" value="{{blog.category}}">
-        </mat-form-field>
-    </form>
-    <br>
+@if (blog) {
+  <form class="form">
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="{{blog.title}}">
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput placeholder="Ex. Pizza" value="{{blog.category}}">
+    </mat-form-field>
+  </form>
+  <br>
     <section>
-        <a color="primary" mat-raised-button routerLink="/dashboard">Go to DashBoard</a>
+      <a color="primary" mat-raised-button routerLink="/dashboard">Go to DashBoard</a>
     </section>
-</ng-container>
+  } @else {
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  }

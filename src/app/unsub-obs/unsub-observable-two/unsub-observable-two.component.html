@@ -1,1 +1,3 @@
-<p *ngIf="timer$()">unsub-observable-two works!</p>
+@if (timer$()) {
+  <p>unsub-observable-two works!</p>
+}

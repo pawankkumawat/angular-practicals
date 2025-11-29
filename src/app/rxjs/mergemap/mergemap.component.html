@@ -1,8 +1,8 @@
-<ng-template #loading>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf="images$ | async as images else loading">
-  <ng-container *ngFor="let image of images">
+
+@if (images$ | async; as images) {
+  @for (image of images; track image) {
     <img src="image.url" alt="No image"><br>
-  </ng-container>
-</ng-container>
+  }
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}

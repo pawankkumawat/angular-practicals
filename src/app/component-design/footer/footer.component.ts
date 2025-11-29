@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, inject, Output } from '@angular/core';
 import { FOOTER_TOKEN, IFooter } from '../token';
-import { CommonModule } from '@angular/common';
+
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
 
 @Component({
   selector: 'app-footer',
-  imports: [CommonModule,AllMaterialModule],
+  imports: [AllMaterialModule],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
   standalone: true,

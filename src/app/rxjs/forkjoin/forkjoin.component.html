@@ -1,27 +1,31 @@
 
 <h1>Edit Report Configuration</h1>
-<ng-template #loading>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
 <!-- <ng-container  *ngIf="isReportsAvailable && isReportFormatAvailable && isReportDataAvailable else loading" [formGroup]="form"> -->
-<ng-container  *ngIf="isAllDataAvailable else loading" [formGroup]="form">
-<mat-form-field appearance="fill">
-    <mat-label>Report</mat-label>
-    <mat-select formControlName="reportControl" >
-      <mat-option *ngFor="let report of reports" [value]="report.value">
-        {{report.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field appearance="fill">
-    <mat-label>Format</mat-label>
-    <mat-select formControlName="reportFormatControl"  >
-      <mat-option *ngFor="let format of reportFormats" [value]="format.value" >
-        {{format.name}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <br/>
-  <button mat-raised-button color="primary" [disabled]="form.pristine || form.invalid">Save</button>
-</ng-container>
+@if (isAllDataAvailable) {
+  <ng-container  [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Report</mat-label>
+      <mat-select formControlName="reportControl" >
+        @for (report of reports; track report) {
+          <mat-option [value]="report.value">
+            {{report.name}}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Format</mat-label>
+      <mat-select formControlName="reportFormatControl"  >
+        @for (format of reportFormats; track format) {
+          <mat-option [value]="format.value" >
+            {{format.name}}
+          </mat-option>
+        }
+      </mat-select>
+    </mat-form-field>
+    <br/>
+    <button mat-raised-button color="primary" [disabled]="form.pristine || form.invalid">Save</button>
+  </ng-container>
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}

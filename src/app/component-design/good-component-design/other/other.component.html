@@ -1,25 +1,27 @@
-<ng-container *ngIf="data$ | async">
-<form [formGroup]="form">
-<fieldset>
-  <legend> <h2>Other Information</h2></legend>
-  <div class="flex-parent">
-      <div class="flex-child">
-
-        <mat-form-field class="full-width" appearance="fill">
+@if (data$ | async) {
+  <form [formGroup]="form">
+    <fieldset>
+      <legend> <h2>Other Information</h2></legend>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
             <mat-label>Notes</mat-label>
             <input matInput placeholder="Notes" formControlName="Notes">
-            <mat-error *ngIf="Notes?.errors?.required"></mat-error>
-        </mat-form-field>
+            @if (Notes?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Last Modified By</mat-label>
+            <input matInput placeholder="Last Modified By" formControlName="LastModifiedBy">
+            @if (LastModifiedBy?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
       </div>
-  <div class="flex-child">
-
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Last Modified By</mat-label>
-        <input matInput placeholder="Last Modified By" formControlName="LastModifiedBy">
-        <mat-error *ngIf="LastModifiedBy?.errors?.required"></mat-error>
-    </mat-form-field>
-  </div>
-  </div>
-  </fieldset>
-</form>
-</ng-container>
+    </fieldset>
+  </form>
+}

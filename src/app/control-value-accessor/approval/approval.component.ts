@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { ReactiveFormsModule, UntypedFormBuilder, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -9,7 +9,7 @@ import { SignatureComponent } from '../signature/signature.component';
   selector: 'app-approval',
   templateUrl: './approval.component.html',
   standalone: true,
-  imports: [ReactiveFormsModule,CommonModule,MatFormFieldModule,SignatureComponent,MatInputModule],
+  imports: [ReactiveFormsModule, MatFormFieldModule, SignatureComponent, MatInputModule],
 
 })
 export class ApprovalComponent {

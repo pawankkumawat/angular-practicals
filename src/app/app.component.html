@@ -16,18 +16,18 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-card class="card">
-          <mat-card-header>
-            <ng-container *ngIf="routeData$ |async as routeData">
-              <mat-card-title>{{routeData.text}}</mat-card-title>
-            </ng-container>
-            <mat-card-subtitle></mat-card-subtitle>
-          </mat-card-header>
-          <mat-card-content>
-            <router-outlet></router-outlet>
-          </mat-card-content>
-        </mat-card>
-      
+      <mat-card class="card">
+        <mat-card-header>
+          @if (routeData$ |async; as routeData) {
+            <mat-card-title>{{routeData.text}}</mat-card-title>
+          }
+          <mat-card-subtitle></mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <router-outlet></router-outlet>
+        </mat-card-content>
+      </mat-card>
+
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

@@ -1,54 +1,56 @@
-<ng-template #loading>
-    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<div *ngIf="country else loading">
-<form class="form" [formGroup]="form">
-    <mat-form-field class="full-width" appearance="fill">
+
+@if (country) {
+  <div>
+    <form class="form" [formGroup]="form">
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>Text</mat-label>
         <input matInput placeholder="Text" formControlName="Text">
         <!-- <mat-error *ngIf="form.errors.required"> Required</mat-error> -->
-    </mat-form-field>
-    <mat-form-field class="full-width" appearance="fill">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>DateModified</mat-label>
         <input matInput placeholder="Date Modified" formControlName="DateModified">
-    </mat-form-field>
-    <mat-form-field class="full-width" appearance="fill">
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill">
         <mat-label>Modified By</mat-label>
         <input matInput placeholder="Modified By" formControlName="ModifiedBy">
-    </mat-form-field>
-    <div>
+      </mat-form-field>
+      <div>
         <mat-checkbox formControlName="IsDeleted" class="example-margin">is Deleted</mat-checkbox>
-    </div>
-</form>
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
-</div>
+      </div>
+    </form>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil quae, natus doloremque ipsam quibusdam perferendis? Beatae id adipisci earum voluptatum non nobis consequuntur placeat dolore dicta omnis dolor, saepe eaque.
+  </div>
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
 <!-- <section>
 <div class="btns button-row">
-    <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid || !canUpdate">Save</button>
-    <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="form.pristine">Discard</button>
-    <button mat-raised-button color="primary" (click)="deleteBtnClick()" [disabled]="this.form.get('IsUsed')?.value || !canDelete">Delete</button>
+  <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="form.pristine || form.invalid || !canUpdate">Save</button>
+  <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="form.pristine">Discard</button>
+  <button mat-raised-button color="primary" (click)="deleteBtnClick()" [disabled]="this.form.get('IsUsed')?.value || !canDelete">Delete</button>
 </div>
 </section> -->
 <!-- <mat-card-actions class="actions">
-    <div class="btns button-row">
-      <button mat-raised-button color="primary" >Refresh</button>
-      <button mat-raised-button color="primary" >Discard</button>
-      <button mat-raised-button color="primary" >Delete</button>
-  </div>
-  </mat-card-actions> -->
+<div class="btns button-row">
+  <button mat-raised-button color="primary" >Refresh</button>
+  <button mat-raised-button color="primary" >Discard</button>
+  <button mat-raised-button color="primary" >Delete</button>
+</div>
+</mat-card-actions> -->

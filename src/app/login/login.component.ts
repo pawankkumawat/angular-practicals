@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -13,13 +13,12 @@ import { Candeactivate } from '../guards/candeactivate.guard';
     templateUrl: './login.component.html',
     styleUrls: ['./login.component.scss'],
     imports: [
-        CommonModule,
-        ReactiveFormsModule,
-        FormsModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule
-    ]
+    ReactiveFormsModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule
+]
 })
 export class LoginComponent implements OnInit ,Candeactivate {
   form!: UntypedFormGroup;

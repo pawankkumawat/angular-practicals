@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -13,7 +13,7 @@ import { exhaustMap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-bad-componet-design',
-    imports: [CommonModule, ReactiveFormsModule, AllMaterialModule],
+    imports: [ReactiveFormsModule, AllMaterialModule],
     templateUrl: './bad-componet-design.component.html',
     styleUrl: './bad-componet-design.component.scss'
 })

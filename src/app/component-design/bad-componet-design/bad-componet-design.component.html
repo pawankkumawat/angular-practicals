@@ -1,116 +1,122 @@
 <h1>Bad Component Design</h1>
 <mat-divider></mat-divider>
-<ng-template #loading>
-  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-</ng-template>
-<ng-container *ngIf="isAllDataReceived else loading">
-<form class="form" [formGroup]="form">
-<fieldset>
-<legend> <h2>Customer</h2></legend>
-<div class="flex-parent">
-<div class="flex-child">
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Email</mat-label>
-        <input matInput placeholder="Email" formControlName="Email">
-        <mat-error *ngIf="Email?.errors?.required"></mat-error>
-    </mat-form-field>
-</div>
-<div class="flex-child">
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Telephone</mat-label>
-        <input matInput placeholder="Telephone" formControlName="Telephone">
-        <mat-error *ngIf="Telephone?.errors?.required"></mat-error>
-    </mat-form-field>
-</div>
-</div>
-<div class="flex-parent">
-    <div class="flex-child">
-        <mat-form-field class="full-width" appearance="fill">
+@if (isAllDataReceived) {
+  <form class="form" [formGroup]="form">
+    <fieldset>
+      <legend> <h2>Customer</h2></legend>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" formControlName="Email">
+            @if (Email?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Telephone</mat-label>
+            <input matInput placeholder="Telephone" formControlName="Telephone">
+            @if (Telephone?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
             <mat-label>Address</mat-label>
             <input matInput placeholder="Address" formControlName="Address">
-            <mat-error *ngIf="Address?.errors?.required"></mat-error>
-        </mat-form-field>
-    </div>
-<div class="flex-child">
-    <mat-form-field class="full-width" appearance="fill">
-        <mat-label>Pin</mat-label>
-        <input matInput placeholder="Pin" formControlName="Pin">
-        <mat-error *ngIf="Pin?.errors?.required"></mat-error>
-    </mat-form-field>
-</div>
-</div>
-</fieldset>
-
-
-
-<fieldset>
-    <legend> <h2>Vehicle</h2></legend>
-    <div class="flex-parent">
-        <div class="flex-child">
-            <mat-form-field class="full-width" appearance="fill">
-                <mat-label>VehicleNo</mat-label>
-                <input matInput placeholder="VehicleNo" formControlName="VehicleNo">
-                <mat-error *ngIf="VehicleNo?.errors?.required"></mat-error>
-            </mat-form-field>
+            @if (Address?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
         </div>
-    <div class="flex-child">
-        <mat-form-field class="full-width" appearance="fill">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Pin</mat-label>
+            <input matInput placeholder="Pin" formControlName="Pin">
+            @if (Pin?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend> <h2>Vehicle</h2></legend>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>VehicleNo</mat-label>
+            <input matInput placeholder="VehicleNo" formControlName="VehicleNo">
+            @if (VehicleNo?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
             <mat-label>OdometerReading</mat-label>
             <input matInput placeholder="OdometerReading" formControlName="OdometerReading">
-            <mat-error *ngIf="OdometerReading?.errors?.required"></mat-error>
-        </mat-form-field>
-    </div>
-    </div>
-
-    <div class="flex-parent">
-        <div class="flex-child">
-
-          <mat-form-field class="full-width" appearance="fill">
-              <mat-label>Registration Date</mat-label>
-              <input matInput placeholder="Registration Date" formControlName="RegistrationDate">
-              <mat-error *ngIf="RegistrationDate?.errors?.required"></mat-error>
+            @if (OdometerReading?.errors?.required) {
+              <mat-error></mat-error>
+            }
           </mat-form-field>
         </div>
-    <div class="flex-child">
-
-      <mat-form-field class="full-width" appearance="fill">
-          <mat-label>LastService Date</mat-label>
-          <input matInput placeholder="LastService Date" formControlName="LastServiceDate">
-          <mat-error *ngIf="LastServiceDate?.errors?.required"></mat-error>
-      </mat-form-field>
-    </div>
-    </div>
-
-    </fieldset>
-
-
-<fieldset>
-    <legend> <h2>Other Information</h2></legend>
-    <div class="flex-parent">
+      </div>
+      <div class="flex-parent">
         <div class="flex-child">
-
           <mat-form-field class="full-width" appearance="fill">
-              <mat-label>Notes</mat-label>
-              <input matInput placeholder="Notes" formControlName="Notes">
-              <mat-error *ngIf="Notes?.errors?.required"></mat-error>
+            <mat-label>Registration Date</mat-label>
+            <input matInput placeholder="Registration Date" formControlName="RegistrationDate">
+            @if (RegistrationDate?.errors?.required) {
+              <mat-error></mat-error>
+            }
           </mat-form-field>
         </div>
-    <div class="flex-child">
-
-      <mat-form-field class="full-width" appearance="fill">
-          <mat-label>Last Modified By</mat-label>
-          <input matInput placeholder="Last Modified By" formControlName="LastModifiedBy">
-          <mat-error *ngIf="LastModifiedBy?.errors?.required"></mat-error>
-      </mat-form-field>
-    </div>
-    </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>LastService Date</mat-label>
+            <input matInput placeholder="LastService Date" formControlName="LastServiceDate">
+            @if (LastServiceDate?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
     </fieldset>
-
+    <fieldset>
+      <legend> <h2>Other Information</h2></legend>
+      <div class="flex-parent">
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Notes</mat-label>
+            <input matInput placeholder="Notes" formControlName="Notes">
+            @if (Notes?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+        <div class="flex-child">
+          <mat-form-field class="full-width" appearance="fill">
+            <mat-label>Last Modified By</mat-label>
+            <input matInput placeholder="Last Modified By" formControlName="LastModifiedBy">
+            @if (LastModifiedBy?.errors?.required) {
+              <mat-error></mat-error>
+            }
+          </mat-form-field>
+        </div>
+      </div>
+    </fieldset>
     <footer>
       <button mat-raised-button color="primary" (click)="saveBtnClick()" [disabled]="isSaveButtonClicked || !hasRights || form.pristine || form.invalid">Save</button>
       <button mat-raised-button color="primary" (click)="discardBtnClick()" [disabled]="!hasRights || form.pristine || form.invalid">Discard</button>
       <button mat-raised-button color="primary" (click)="refreshBtnClick()" >Refresh</button>
-  </footer>
-</form>
-
-</ng-container>
+    </footer>
+  </form>
+} @else {
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+}
