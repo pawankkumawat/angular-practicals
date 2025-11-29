@@ -16,7 +16,6 @@ import { RxjsModule } from './rxjs/rxjs.module';
 import { SearchTypeAheadModule } from './search-type-ahead/search-type-ahead.module';
 import { UnsubObsModule } from './unsub-obs/unsub-obs.module';
 import { WhenUseHigherOrderOpeartorsModule } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors.module';
-import { ControlValueAccessorModule } from './control-value-accessor/control-value-accessor.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
 import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';

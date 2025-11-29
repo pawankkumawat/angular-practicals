@@ -1,76 +1,76 @@
-import { Component, ViewChild } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { SignaturePad } from 'angular2-signaturepad';
-import { NgModule } from '@angular/core';
-import { SignaturePadModule } from 'angular2-signaturepad';
+// import { Component, ViewChild } from '@angular/core';
+// import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
+// import { SignaturePad } from 'angular2-signaturepad';
+// import { NgModule } from '@angular/core';
+// import { SignaturePadModule } from 'angular2-signaturepad';
 
-@NgModule({
-  imports: [SignaturePadModule],
-  exports: [SignaturePadModule]
-})
-export class SignaturePadWrapperModule {}
+// @NgModule({
+//   imports: [SignaturePadModule],
+//   exports: [SignaturePadModule]
+// })
+// export class SignaturePadWrapperModule {}
 
-@Component({
-  selector: 'app-signature',
-  templateUrl: './signature.component.html',
- standalone: true,
- imports: [SignaturePadWrapperModule],
-  providers:[{
-    provide:NG_VALUE_ACCESSOR,
-    useExisting:SignatureComponent,
-    multi:true
-  }]
-})
-export class SignatureComponent implements ControlValueAccessor {
+// @Component({
+//   selector: 'app-signature',
+//   templateUrl: './signature.component.html',
+//  standalone: true,
+//  imports: [SignaturePadWrapperModule],
+//   providers:[{
+//     provide:NG_VALUE_ACCESSOR,
+//     useExisting:SignatureComponent,
+//     multi:true
+//   }]
+// })
+// export class SignatureComponent implements ControlValueAccessor {
 
-  @ViewChild(SignaturePad) signaturePad!: SignaturePad;
-
-
-  signaturePadOptions: Object = {
-    'minWidth': 5,
-    'canvasWidth': 500,
-    'canvasHeight': 300
-  };
-  constructor() { }
+//   @ViewChild(SignaturePad) signaturePad!: SignaturePad;
 
 
-
-  ngAfterViewInit() {
-    this.signaturePad.set('minWidth', 5);
-    this.signaturePad.clear();
-  }
-
-  // @Output()
-  // signatureEmitter = new EventEmitter();
-  drawComplete() {
-    // console.log(this.signaturePad.toDataURL());
-    // this.signatureEmitter.emit(this.signaturePad.toDataURL())
-    this.onChange(this.signaturePad.toDataURL());
-    this.onTouch();
-  }
-
-  drawStart() {
-    console.log('begin drawing');
-  }
-
-  public clear(): void {
-    this.signaturePad.clear();
-    //  this.signatureEmitter.emit(null);
-    this.onChange('');
-  }
+//   signaturePadOptions: Object = {
+//     'minWidth': 5,
+//     'canvasWidth': 500,
+//     'canvasHeight': 300
+//   };
+//   constructor() { }
 
 
-  value=null;
-  writeValue(obj: any): void {
-    this.value = obj;
-  }
-  onChange! :(value:any)=>void;
-  onTouch!:()=>void;
-  registerOnChange(fn: any): void {
-    this.onChange = fn;
-  }
-  registerOnTouched(fn: any): void {
-    this.onTouch =fn;
-  }
 
-}
+//   ngAfterViewInit() {
+//     this.signaturePad.set('minWidth', 5);
+//     this.signaturePad.clear();
+//   }
+
+//   // @Output()
+//   // signatureEmitter = new EventEmitter();
+//   drawComplete() {
+//     // console.log(this.signaturePad.toDataURL());
+//     // this.signatureEmitter.emit(this.signaturePad.toDataURL())
+//     this.onChange(this.signaturePad.toDataURL());
+//     this.onTouch();
+//   }
+
+//   drawStart() {
+//     console.log('begin drawing');
+//   }
+
+//   public clear(): void {
+//     this.signaturePad.clear();
+//     //  this.signatureEmitter.emit(null);
+//     this.onChange('');
+//   }
+
+
+//   value=null;
+//   writeValue(obj: any): void {
+//     this.value = obj;
+//   }
+//   onChange! :(value:any)=>void;
+//   onTouch!:()=>void;
+//   registerOnChange(fn: any): void {
+//     this.onChange = fn;
+//   }
+//   registerOnTouched(fn: any): void {
+//     this.onTouch =fn;
+//   }
+
+// }
