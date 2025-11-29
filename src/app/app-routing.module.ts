@@ -15,10 +15,10 @@ export const routeslist: Routes = [
     path: 'signals',
     loadComponent: () => import('./signals/signals.component').then(m => m.SignalsComponent)
   },
-  // {
-  //   path: 'cva',
-  //   loadChildren: () => import('./control-value-accessor/control-value-accessor.module').then(m => m.ControlValueAccessorModule)
-  // },
+  {
+    path: 'cva',
+    loadChildren: () => import('./control-value-accessor/control-value-accessor.module').then(m => m.ControlValueAccessorModule)
+  },
   {
     path: 'orders',
     loadComponent: () => import('./order-list/order-list.component').then(m => m.OrderListComponent)
