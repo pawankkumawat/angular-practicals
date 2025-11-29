@@ -1,10 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { NumberValueAccessor } from '@angular/forms';
-import { Observable, timer } from 'rxjs';
-import { map, tap } from 'rxjs/operators';
+import { Observable, of, timer } from 'rxjs';
+import { map, mapTo, tap } from 'rxjs/operators';
 import { District, DISTRICTS, RAPID_API_HOST, RAPID_API_KEY, STATES } from '../constants/constant';
 import { Blog, Group, NameValuePair, ReportData, State, User } from '../models/models';
+import { ELEMENT_DATA, OpenOrderDataItem } from '../signals/signals.model';
 
 @Injectable({
   providedIn: 'root',
@@ -65,6 +66,12 @@ export class DataService {
         // },
       ])
     );
+  }
+  getOpenOrderData(): Observable<OpenOrderDataItem[]> {
+    return of(ELEMENT_DATA);
+    // return timer(2000).pipe(
+    //   mapTo(ELEMENT_DATA)
+    // );
   }
   getCategoryByBlogId(id:number): Observable<Group[]> {
     return timer(2000).pipe(

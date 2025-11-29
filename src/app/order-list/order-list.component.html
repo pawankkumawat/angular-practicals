@@ -1,0 +1,44 @@
+<ng-container *ngIf="dataSource && dataSource.data && dataSource.data.length>0;else loading">
+  <table mat-table [dataSource]="dataSource" matSort>
+    <ng-container matColumnDef="OrderNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Order</th>
+      <td mat-cell *matCellDef="let row">{{ row.OrderNumber }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="OrderType">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Type</th>
+      <td mat-cell *matCellDef="let row">{{ row.OrderType }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="ReceivedDate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Received</th>
+      <td mat-cell *matCellDef="let row">{{ row.ReceivedDate | date}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="CustomerNumber">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer</th>
+      <td mat-cell *matCellDef="let row">{{ row.CustomerNumber }}{{ row?.Name ? ' - ' + row.Name : '' }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="VehicleId">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Chassis Number</th>
+      <td mat-cell *matCellDef="let row">{{ row.VehicleId }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="LicensePlate">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>License Plate</th>
+      <td mat-cell *matCellDef="let row">{{ row.LicensePlate }}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="Status">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Status</th>
+      <td mat-cell *matCellDef="let row">{{ row.Status }}</td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns" class="table-header"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns" ></tr>
+  </table>
+</ng-container>
+ <ng-template #loading>
+  <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+</ng-template>

@@ -74,6 +74,7 @@ const TREE_DATA: FoodNode[] = Routes;
   templateUrl: './tree.component.html',
   styleUrl: './tree.component.scss',
   imports: [MatTreeModule, MatButtonModule, MatIconModule],
+  standalone: true,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TreeNestedChildAccessorOverviewExample {

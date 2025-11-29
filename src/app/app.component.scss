@@ -8,7 +8,7 @@
     right: 0;
   }
 
-  .example-is-mobile .example-toolbar {
+  .is-mobile .header {
     position: fixed;
     /* Make sure the toolbar will stay on top of the content as it scrolls past. */
     z-index: 2;
@@ -24,7 +24,7 @@
     flex: 1;
   }
 
-  .example-is-mobile .sidenav-container {
+  .is-mobile .sidenav-container {
     /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
        `<body>` to be our scrolling element for mobile layouts. */
     flex: 1 0 auto;
@@ -44,17 +44,7 @@
   }
 
 
-  .example-header-image {
-    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-    background-size: cover;
-  }
-
-
   .mdc-list {
     margin: 0;
     padding-right: 32px;
   }
-
-  // mat-sidenav{
-  //   margin-bottom:55px;
-  // }

@@ -1,26 +1,27 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { BadComponetDesignComponent } from './component-design/bad-componet-design/bad-componet-design.component';
-import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
-import { StrategyComponent } from './design-patterns/strategy/strategy.component';
-import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
-import { LazyComponent } from './lazy/lazy.component';
-import { LoginComponent } from './login/login.component';
-import { UnsubObservableOneComponent } from './unsub-obs/unsub-observable-one/unsub-observable-one.component';
-import { WhenUseHigherOrderOpeartorsComponent } from './when-use-higher-order-opeartors/when-use-higher-order-opeartors/when-use-higher-order-opeartors.component';
-import {  CanDeactivateCustomGuard, candeactivateGuard } from './guards/candeactivate.guard';
-import {  GoodComponentDesignComponent } from './component-design/good-component-design/good-component-design.component';
-import { ContainerComponent } from './component-design/good-component-design/container/container.component';
-import { UnsubObservableTwoComponent } from './unsub-obs/unsub-observable-two/unsub-observable-two.component';
-import { WrapperComponent } from './component-design/good-component-design/wrapper/wrapper.component';
 import { CustomerFooterComponent } from './component-design/customer-footer/customer-footer.component';
+import { GoodComponentDesignComponent } from './component-design/good-component-design/good-component-design.component';
 import { VehicleFooterComponent } from './component-design/vehicle-footer/vehicle-footer.component';
+import { DashboardComponent } from './dashboard/dashboard/dashboard.component';
+import { candeactivateGuard } from './guards/candeactivate.guard';
+import { InterceptorComponent } from './interceptors/interceptor/interceptor.component';
+import { LoginComponent } from './login/login.component';
+import { UnsubObservableTwoComponent } from './unsub-obs/unsub-observable-two/unsub-observable-two.component';
 
 export const routeslist: Routes = [
 
   {
     path: 'signals',
     loadComponent: () => import('./signals/signals.component').then(m => m.SignalsComponent)
+  },
+  {
+    path: 'cva',
+    loadChildren: () => import('./control-value-accessor/control-value-accessor.module').then(m => m.ControlValueAccessorModule)
+  },
+  {
+    path: 'orders',
+    loadComponent: () => import('./order-list/order-list.component').then(m => m.OrderListComponent)
   },
   {
     path: 'lazy',
@@ -72,5 +73,15 @@ export const routeslist: Routes = [
     path: 'unsub2',
     component: UnsubObservableTwoComponent,
     // canDeactivate:[candeactivateGuard]
+  },
+  {
+    path: 'dps',
+    loadChildren() {
+      return import('./design-patterns/design-patterns.module').then(m => m.DesignPatternsModule)
+    },
+  },
+  {
+    path: 'highcard',
+    loadComponent:() => import('./highcard/highcard.component').then(m => m.default)
   },
 ];

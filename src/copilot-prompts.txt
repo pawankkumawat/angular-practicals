@@ -1,0 +1,13 @@
+Locate #file:constants.ts in project.
+find Routes constant.
+Add below entry in it.
+locate text with Design Pattern if found Add
+below object in children array
+{
+        text: 'Observer Pattern',
+        name: 'Observer Pattern',
+        value: 'observer',
+}
+
+if children array doesn't exist then add add a property children:[]
+and insert into it.

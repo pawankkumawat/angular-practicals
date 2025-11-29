@@ -46,32 +46,52 @@ export const Routes = [
     name: 'Component Design',
     // value: 'bad/1',
     children: [
-      { 
-      name: 'Bad Component Design',
-      text: 'Bad Component Design',
-      value: 'bad/1' },
-      { 
+      {
+        name: 'Bad Component Design',
+        text: 'Bad Component Design',
+        value: 'bad/1'
+      },
+      {
         name: 'Better Component Design',
         text: 'Better Component Design',
-        value: 'good/1' },]
+        value: 'good/1'
+      },]
   },
-  { 
+  {
     name: 'Reusable Footer',
     text: 'Reusable Footer',
     children: [
-      { 
-      name: 'Customer Footer',
-      text: 'Non-reusable Footer',
-      value: 'custfoot' },
-      { 
+      {
+        name: 'Customer Footer',
+        text: 'Non-reusable Footer',
+        value: 'custfoot'
+      },
+      {
         name: 'Vehicle Footer',
         text: 'Reusable Footer',
-        value: 'vehclefoot' },]
-     },
+        value: 'vehclefoot'
+      },]
+  },
   {
-    text: 'Strategy Pattern',
-    name: 'Strategy Pattern',
-    value: 'strategy',
+    name: 'Design Patterns',
+    text: 'Design Patterns',
+    children: [
+      {
+        text: 'Strategy Pattern',
+        name: 'Strategy Pattern',
+        value: 'strategy',
+      },
+      {
+        text: 'Bridge Pattern',
+        name: 'Bridge Pattern',
+        value: 'bridge',
+      },
+      {
+        text: 'Observer Pattern',
+        name: 'Observer Pattern',
+        value: 'observer',
+}
+    ]
   },
   {
     text: 'Signals',
@@ -79,10 +99,16 @@ export const Routes = [
     value: 'signals',
   },
   {
-    text: 'Bridge Pattern',
-    name: 'Bridge Pattern',
-    value: 'bridge',
+    text: 'Orders',
+    name: 'orders',
+    value: 'orders',
   },
+  {
+    text: 'Highcard',
+    name: 'Highcard',
+    value: 'highcard',
+  },
+
   {
     text: 'HigherOrder Operators',
     name: 'HigherOrder Operators',
@@ -134,7 +160,7 @@ export const Routes = [
     name: 'Country Master',
     value: 'country/2',
   },
-  
+
 
 ];
 
@@ -162,26 +188,26 @@ export const BranchingDataObj: BranchingData[] = [
 ];
 
 
-export interface District{
-  distId:number;
-  text:string
+export interface District {
+  distId: number;
+  text: string
 }
 
 export const DISTRICTS: District[] =
   [
-    {"distId":1,text:"Anantapur"},
-    {"distId":1,text:"Chittoor"},
-    {"distId":1,text:"East Godavari"},
-    {"distId":1,text:"Guntur"},
-    {"distId":1,text:"Krishna"},
-    {"distId":1,text:"Kurnool"},
-    {"distId":1,text:"Nellore"},
-    {"distId":1,text:"Prakasam"},
-    {"distId":1,text:"Srikakulam"},
-    {"distId":1,text:"Visakhapatnam"},
-    {"distId":1,text:"Vizianagaram"},
-    {"distId":1,text:"West Godavari"},
-    {"distId":1,text:"YSR Kadapa"}
+    { "distId": 1, text: "Anantapur" },
+    { "distId": 1, text: "Chittoor" },
+    { "distId": 1, text: "East Godavari" },
+    { "distId": 1, text: "Guntur" },
+    { "distId": 1, text: "Krishna" },
+    { "distId": 1, text: "Kurnool" },
+    { "distId": 1, text: "Nellore" },
+    { "distId": 1, text: "Prakasam" },
+    { "distId": 1, text: "Srikakulam" },
+    { "distId": 1, text: "Visakhapatnam" },
+    { "distId": 1, text: "Vizianagaram" },
+    { "distId": 1, text: "West Godavari" },
+    { "distId": 1, text: "YSR Kadapa" }
   ];
 
 export const STATES: State[] = [

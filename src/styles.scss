@@ -23,17 +23,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 }
 
 
-footer{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: grey;
-  color: white;
-  text-align: center;
-  margin: auto;
-}
-
 .flex-parent{
   display: flex;
   width: 100%;
@@ -75,17 +64,17 @@ fieldset{
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: rgb(250, 5, 168);
-
 }
 
 // Custom scrollbar
+
 
 .container-content-footer {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 82vh;
+    height: 100%;
     width: 100%;
     align-items: stretch;
 }
