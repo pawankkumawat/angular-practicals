@@ -24,6 +24,10 @@ export const routeslist: Routes = [
     loadComponent: () => import('./order-list/order-list.component').then(m => m.OrderListComponent)
   },
   {
+    path: 'perf1',
+    loadComponent: () => import('./performance/performance.component').then(m => m.PerformanceComponent)
+  },
+  {
     path: 'lazy',
     loadChildren: () => import('./lazy/lazy.module').then(m => m.LazyModule)
   },

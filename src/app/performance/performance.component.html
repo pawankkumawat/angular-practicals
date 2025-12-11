@@ -1,0 +1,59 @@
+<table class="table table-hover">
+  <thead style="position: sticky; top: 0; background: white; z-index: 1">
+    <tr class="custom-mat-header-row">
+      <th>
+        <mat-checkbox (change)="AssignmentHeaderCheckBoxEvent($event.checked)" color="primary"> </mat-checkbox>
+      </th>
+      <th>EDV-Typ/Model</th>
+      <th class="text-right">Betrag</th>
+      <th class="text-right">ZE</th>
+      <th>ZE änderbar</th>
+      <th class="text-right">Lack-Material</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let item of this.data.obj2; let i = index">
+      <tr id="readonly_{{ i }}">
+        <ng-container>
+          <td class="t-nobordertop">
+            <mat-checkbox color="primary" [checked]="item.childrenCheckbox"> </mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container>
+        <!-- <ng-container *ngFor="let newObj1Item of data.obj1"> 
+            <td class="t-nobordertop" *ngIf="newObj1Item.Value === item.bEdvTyp">{{ newObj1Item?.Value }} - {{ newObj1Item?.Text }}</td>
+        </ng-container> -->
+          <td class="t-nobordertop">{{ newObj1[item.bEdvTyp].Value }} - {{ newObj1[item.bEdvTyp].Text }}</td>
+        </ng-container>
+
+        <ng-container>
+          <td class="t-nobordertop text-right">
+            <label>
+              {{ item.dPreis | number : '0.2-2' }}
+            </label>
+          </td>
+        </ng-container>
+
+        <ng-container>
+          <td class="t-nobordertop text-right">
+            <label>{{ item.dZEArbeitsWert === null ? 0 : item.dZEArbeitsWert }}</label>
+          </td>
+        </ng-container>
+
+        <ng-container>
+          <td class="t-nobordertop">
+            <mat-checkbox [checked]="item.bVs5Cha"></mat-checkbox>
+          </td>
+        </ng-container>
+
+        <ng-container>
+          <td class="t-nobordertop text-right">
+            <label>{{ item.lMaterialEinheiten === null ? 0 : item.lMaterialEinheiten }}</label>
+          </td>
+        </ng-container>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

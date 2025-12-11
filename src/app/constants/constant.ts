@@ -93,6 +93,18 @@ export const Routes = [
 }
     ]
   },
+   {
+    name: 'Performance',
+    text: 'Performance',
+    children: [
+      {
+        text: 'Performance Issue 1',
+        name: 'Performance Issue 1',
+        value: 'perf1',
+      },
+     
+    ]
+  },
   {
     text: 'Signals',
     name: 'Signals',
@@ -240,3 +252,66 @@ export const STATES: State[] = [
   { id: 27, text: 'Uttar Pradesh' },
   { id: 28, text: 'West Bengal' },
 ]
+
+export const IconTooltips = {
+  TooltipHome: 'Go to dashboard',
+  TooltipCompanySelect: 'Please select a company',
+  TooltipUserProfile: 'User profile',
+  TooltipAdd: 'Create new',
+  TooltipSearch: 'Search',
+  TooltipDelete: 'Delete',
+  TooltipLogoutUsers: 'Logout users',
+  TooltipLock: 'Lock',
+  TooltipAuftragDelete: 'Delete order',
+  TooltipBenutzerDelete: 'Delete',
+  TooltipKundeDelete: 'Delete customer',
+  TooltipFahrzeugDelete: 'Delete vehicle',
+  TooltipUserStation: 'Workstation for printer configuration',
+
+  TooltipRemoveCircle: 'Remove',
+  TooltipAddCircle: 'Add',
+
+  TooltipReply: 'Open in master',
+  TooltipMoreVert: 'Submenu',
+
+  TooltipArrowDown: 'Expand',
+  TooltipArrowUp: 'Collapse',
+
+  TooltipYoutubeSearchedFor: 'Search & add', // not yet used
+
+  TooltipClear: 'Clear entries',
+  TooltipClose: 'Close',
+  TooltipAutoRenew: 'Reload',
+  TooltipReload: 'Reload',
+  TooltipSwapHoriz: 'Change holder',
+
+  TooltipEuro: 'Calculate order',
+  TooltipSecurity: 'Privacy policy',
+
+  TooltipFunctionInfo: 'Function info',
+  TooltipRemoveVehicle: 'Remove vehicle from order',
+
+  TooltipIndependentPrint: 'Printouts',
+  TooltipPrint: 'Print',
+  TooltipDrucken: 'Print',
+  TooltipPreview: 'Preview',
+  TooltipWorkshopTimesApps: 'Detail view',
+  TooltipWorkshopTimesAlert: 'Warning: there are still open time entries',
+
+  TooltipExport: 'File export',
+  TooltipCopyToClipboard: 'Copy to clipboard',
+
+  TooltipInfo: 'Information',
+  TooltipChangePassword: 'Change password',
+  TooltipLogout: 'Logout',
+  TooltipRolleDelete: 'Delete role',
+  TooltipRolleAdd: 'Add new role',
+  TooltipErsatzteilpos: 'If parts or tasks are deselected, the package name will not be printed',
+  TooltipArbeitspos: 'If parts or tasks are deselected, the package name will not be printed',
+  TooltipResend: 'Resend',
+  TooltipReorganize: 'Reorganization',
+  TooltipOverviewOrderStatus: 'Order status overview',
+  TooltipOverviewSagaStatus: 'SAGA status overview',
+  TooltipEdit: 'Edit',
+  TooltipAuftragduplizieren: 'Duplicate order',
+};
