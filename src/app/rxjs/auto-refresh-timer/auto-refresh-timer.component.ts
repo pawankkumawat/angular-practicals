@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { interval, Subject, timer } from 'rxjs';
 import { map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-auto-refresh-timer',
     templateUrl: './auto-refresh-timer.component.html',
     styleUrls: ['./auto-refresh-timer.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AutoRefreshTimerComponent implements OnInit,OnDestroy {

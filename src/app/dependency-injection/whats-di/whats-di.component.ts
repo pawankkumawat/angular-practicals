@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
 import { Rights } from 'src/app/models/models';
@@ -11,6 +11,7 @@ import { EventLoggerService } from './event-logger.service';
     selector: 'app-whats-di',
     templateUrl: './whats-di.component.html',
     styleUrls: ['./whats-di.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WhatsDiComponent implements OnInit {

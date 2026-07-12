@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import {
   MatDialog as MatDialog,
 } from '@angular/material/dialog';
@@ -8,6 +8,7 @@ import { DialogComponent } from '../dialog/dialog.component';
     selector: 'app-async-pipe-usecase-one',
     templateUrl: './async-pipe-usecase-one.component.html',
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class AsyncPipeUsecaseOneComponent {

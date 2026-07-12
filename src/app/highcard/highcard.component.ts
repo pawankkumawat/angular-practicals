@@ -55,7 +55,7 @@
 
 
 
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AllMaterialModule } from '../angular-material/all-material-module';
 import { CARD_COMPARER_TOKEN, createCardsArray, Deck, DECK_TOKEN, Highcard, MultipleDeck, RANKS_TOKEN, TieComparer, WildCardComparer, WinTieBySuitComparer } from './gamev1';
 import { FIVE_RANKS } from './model';
@@ -67,6 +67,7 @@ import { FIVE_RANKS } from './model';
   templateUrl: './highcard.component.html',
   styleUrl: './highcard.component.scss',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [
     { provide: RANKS_TOKEN, useValue: FIVE_RANKS },
     { provide: CARD_COMPARER_TOKEN, useClass: WinTieBySuitComparer },

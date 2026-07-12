@@ -1,6 +1,6 @@
 
 
-import { Component, effect, EventEmitter, input, Input, OnChanges, OnInit, output, Output, signal, SimpleChanges, viewChild, ViewChild } from '@angular/core';
+import { Component, effect, EventEmitter, input, Input, OnChanges, OnInit, output, Output, signal, SimpleChanges, viewChild, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { CommonModule } from '@angular/common';
@@ -13,6 +13,7 @@ import { ELEMENT_DATA, OpenOrderDataItem } from './signals.model';
   templateUrl: './signals.component.html',
   styleUrls: ['./signals.component.scss'],
   imports: [CommonModule, AllMaterialModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 export class SignalsComponent  {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CompressImageProcessor, Processor } from '../image-process';
 
 
@@ -6,6 +6,7 @@ import { CompressImageProcessor, Processor } from '../image-process';
     selector: 'app-c1',
     templateUrl: './c1.component.html',
     styleUrls: ['./c1.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class C1Component implements OnInit {

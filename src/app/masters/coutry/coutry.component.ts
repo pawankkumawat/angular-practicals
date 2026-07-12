@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { RightsService } from 'src/app/services/rights.service';
 import { Master, Rights } from 'src/app/models/models';
@@ -9,6 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
     selector: 'app-coutry',
     templateUrl: './coutry.component.html',
     styleUrls: ['./coutry.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class CountryComponent implements OnInit {

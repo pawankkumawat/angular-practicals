@@ -1,4 +1,4 @@
-import { Component, } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatSnackBar as MatSnackBar } from '@angular/material/snack-bar';
 import { Observable } from 'rxjs';
 import { map, tap } from 'rxjs/operators';
@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
 @Component({
     selector: 'app-dialog',
     templateUrl: './dialog.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class DialogComponent{

@@ -1,5 +1,5 @@
 
-import { Component, inject } from '@angular/core';
+import { Component, inject, ChangeDetectionStrategy } from '@angular/core';
 
 export interface ISubject<T> {
   register: (observer: IObserver<T>) => void;
@@ -76,6 +76,7 @@ export class SMSObserver implements IObserver<{ name: string, age: number }> {
   templateUrl: './observer-pattern.component.html',
   styleUrl: './observer-pattern.component.scss',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [],
 
 })

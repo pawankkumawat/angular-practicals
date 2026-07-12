@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { CustomerComponent } from '../good-component-design/customer/customer.component';
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
 import { FormBuilder } from '@angular/forms';
@@ -17,6 +17,7 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './customer-footer.component.html',
   styleUrl: './customer-footer.component.scss',
   standalone:true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers:[{
     provide:FOOTER_TOKEN,
     useExisting:CustomerFooterComponent

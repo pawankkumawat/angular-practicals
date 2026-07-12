@@ -1,4 +1,4 @@
-import { Component, Injectable, Input, OnInit } from '@angular/core';
+import { Component, Injectable, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   CompressImageProcessor,
   ImageProcessor,
@@ -9,6 +9,7 @@ import {
     selector: 'app-tightly-coupled',
     templateUrl: './tightly-coupled.component.html',
     styleUrls: ['./tightly-coupled.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class TightlyCoupledComponent implements OnInit {

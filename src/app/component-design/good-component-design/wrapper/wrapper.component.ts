@@ -1,4 +1,4 @@
-import { Component, ContentChild, Input, OnInit } from '@angular/core';
+import { Component, ContentChild, Input, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
 import { FOOTER_TOKEN, Footer } from '../footer.token';
 import { Observable } from 'rxjs';
@@ -13,6 +13,7 @@ import { OtherComponent } from '../other/other.component';
     selector: 'app-wrapper',
     imports: [AllMaterialModule, VehicleComponent, CustomerComponent, OtherComponent],
     templateUrl: './wrapper.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './wrapper.component.scss'
 })
 export class WrapperComponent{

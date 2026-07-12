@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogActions, MatDialogClose, MatDialogContent, MatDialogRef, MatDialogTitle } from '@angular/material/dialog';
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
@@ -7,6 +7,7 @@ import { AllMaterialModule } from 'src/app/angular-material/all-material-module'
     selector: 'app-confirm',
     imports: [AllMaterialModule],
     templateUrl: './confirm.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './confirm.component.scss'
 })
 export class ConfirmComponent {

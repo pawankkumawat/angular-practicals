@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Food } from 'src/app/models/models';
 
 @Component({
     selector: 'app-ng-container',
     templateUrl: './ng-container.component.html',
     styleUrls: ['./ng-container.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class NgContainerComponent implements OnInit {

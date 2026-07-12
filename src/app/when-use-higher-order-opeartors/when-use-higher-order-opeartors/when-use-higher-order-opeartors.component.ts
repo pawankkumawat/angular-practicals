@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import {
   concatMap, tap
 } from 'rxjs/operators';
@@ -9,6 +9,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-when-use-higher-order-opeartors',
     templateUrl: './when-use-higher-order-opeartors.component.html',
     styleUrls: ['./when-use-higher-order-opeartors.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class WhenUseHigherOrderOpeartorsComponent implements OnInit {

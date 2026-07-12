@@ -1,4 +1,4 @@
-import { Component, Injector, OnInit } from '@angular/core';
+import { Component, Injector, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { tap } from 'rxjs/operators';
 import { RouterdataService } from 'src/app/services/routerdata.service';
@@ -8,6 +8,7 @@ import { Strategy, StrategyMap } from './strategies';
     selector: 'app-strategy',
     templateUrl: './strategy.component.html',
     styleUrls: ['./strategy.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class StrategyComponent implements OnInit {

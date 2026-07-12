@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, effect, inject, OnInit, viewChild, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, effect, inject, OnInit, viewChild, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { AllMaterialModule } from '../angular-material/all-material-module';
@@ -11,6 +11,7 @@ import { timeout } from 'rxjs/internal/operators/timeout';
   templateUrl: './order-list.component.html',
   styleUrl: './order-list.component.scss',
   imports: [CommonModule, AllMaterialModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   standalone: true
 })
 export class OrderListComponent implements OnInit {

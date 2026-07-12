@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AllMaterialModule } from 'src/app/angular-material/all-material-module';
@@ -15,6 +15,7 @@ import { exhaustMap } from 'rxjs/operators';
     selector: 'app-bad-componet-design',
     imports: [ReactiveFormsModule, AllMaterialModule],
     templateUrl: './bad-componet-design.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './bad-componet-design.component.scss'
 })
 export class BadComponetDesignComponent implements Candeactivate   {

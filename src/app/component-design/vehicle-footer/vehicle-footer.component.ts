@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, BehaviorSubject, forkJoin, Subject, combineLatest } from 'rxjs';
@@ -17,6 +17,7 @@ import { FooterComponent } from '../footer/footer.component';
   templateUrl: './vehicle-footer.component.html',
   styleUrl: './vehicle-footer.component.scss',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers: [{
     provide: FOOTER_TOKEN,
     useExisting: VehicleFooterComponent

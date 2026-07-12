@@ -1,4 +1,4 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, ChangeDetectionStrategy } from '@angular/core';
 import { Subject, timer } from 'rxjs';
 import { concatMap, map, switchMap, takeUntil, tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -8,6 +8,7 @@ import { takeUntilDestroyed,toSignal} from  '@angular/core/rxjs-interop';
     selector: 'app-unsub-observable-two',
     imports: [],
     templateUrl: './unsub-observable-two.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './unsub-observable-two.component.scss'
 })
 export class UnsubObservableTwoComponent implements OnDestroy {

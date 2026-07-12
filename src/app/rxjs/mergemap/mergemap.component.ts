@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subject } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-mergemap',
     templateUrl: './mergemap.component.html',
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class MergemapComponent implements OnInit {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
     selector: 'app-branching-two',
     templateUrl: './branching-two.component.html',
     styleUrls: ['./branching-two.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BranchingTwoComponent implements OnInit {

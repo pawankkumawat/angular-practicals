@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable, Subject, Subscription } from 'rxjs';
 import { concatMap, takeUntil, tap } from 'rxjs/operators';
 import { Blog } from 'src/app/models/models';
@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-unsub-observable-one',
     templateUrl: './unsub-observable-one.component.html',
     styleUrls: ['./unsub-observable-one.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class UnsubObservableOneComponent implements OnInit {

@@ -1,1 +1,24 @@
-<p>callback-hell works!</p>
+@if (user.isLoading()) {
+  <p>Loading user...</p>
+} @else if (user.hasValue()) {
+  <h3>User</h3>
+  <pre>{{ user.value() | json }}</pre>
+}
+
+@if (blog.isLoading()) {
+  <p>Loading blog...</p>
+} @else if (blog.hasValue()) {
+  <h3>Blog</h3>
+  <pre>{{ blog.value() | json }}</pre>
+}
+
+@if (category.isLoading()) {
+  <p>Loading category...</p>
+} @else if (category.hasValue()) {
+  <h3>Category</h3>
+  <pre>{{ category.value() | json }}</pre>
+}
+
+@if (category.error(); as error) {
+  <p>Error: {{ error.message }}</p>
+}

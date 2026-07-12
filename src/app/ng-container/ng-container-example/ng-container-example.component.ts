@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Statistics } from 'src/app/constants/constant';
 import { Stats } from 'src/app/models/models';
 
@@ -6,6 +6,7 @@ import { Stats } from 'src/app/models/models';
     selector: 'app-ng-container-example',
     templateUrl: './ng-container-example.component.html',
     styleUrls: ['./ng-container-example.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class NgContainerExampleComponent implements OnInit {

@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { BranchingDataObj } from 'src/app/constants/constant';
 
 @Component({
     selector: 'app-branching',
     templateUrl: './branching.component.html',
     styleUrls: ['./branching.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class BranchingComponent implements OnInit {

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { CustomerComponent } from './customer/customer.component';
 import { CommonModule } from '@angular/common';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
@@ -20,6 +20,7 @@ import { Candeactivate } from 'src/app/guards/candeactivate.guard';
     selector: 'app-good-component-design',
     imports: [CommonModule, CustomerComponent, OtherComponent, VehicleComponent, AllMaterialModule,  ReactiveFormsModule],
     templateUrl: './good-component-design.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrl: './good-component-design.component.scss'
 })
 export class GoodComponentDesignComponent implements OnInit, Candeactivate  {

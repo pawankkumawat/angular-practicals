@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { BestPracticesService } from './best-practices.service';
 
@@ -6,6 +6,7 @@ import { BestPracticesService } from './best-practices.service';
     selector: 'app-subject-on-service',
     templateUrl: './subject-on-service.component.html',
     styleUrls: ['./subject-on-service.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SubjectOnServiceComponent implements OnInit {

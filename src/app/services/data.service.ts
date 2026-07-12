@@ -76,14 +76,14 @@ export class DataService {
   getCategoryByBlogId(id:number): Observable<Group[]> {
     return timer(2000).pipe(
       map((x) => [
-        // {
-        //   id: 1,
-        //   text: 'Group 1',
-        // },
-        // {
-        //   id: 2,
-        //   text: 'Group 2',
-        // },
+        {
+          id: 1,
+          text: 'Group 1',
+        },
+        {
+          id: 2,
+          text: 'Group 2',
+        },
       ])
     );
   }

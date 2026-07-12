@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Subject } from 'rxjs';
 import { SubBehaveSubService } from '../sub-behave-sub.service';
@@ -7,6 +7,7 @@ import { SubBehaveSubService } from '../sub-behave-sub.service';
     selector: 'app-subject-behavior-subject',
     templateUrl: './subject-behavior-subject.component.html',
     styleUrls: ['./subject-behavior-subject.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SubjectBehaviorSubjectComponent implements OnInit {

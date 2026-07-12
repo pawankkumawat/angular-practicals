@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { UserService } from '../services/user.service';
 
@@ -6,6 +6,7 @@ import { UserService } from '../services/user.service';
     selector: 'app-lazy',
     templateUrl: './lazy.component.html',
     styleUrls: ['./lazy.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class LazyComponent implements OnInit {

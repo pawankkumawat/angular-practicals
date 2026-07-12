@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { SignaturePad } from 'angular2-signaturepad';
 import { NgModule } from '@angular/core';
@@ -15,6 +15,7 @@ export class SignaturePadWrapperModule {}
   templateUrl: './signature.component.html',
  standalone: true,
  imports: [SignaturePadWrapperModule],
+  changeDetection: ChangeDetectionStrategy.Eager,
   providers:[{
     provide:NG_VALUE_ACCESSOR,
     useExisting:SignatureComponent,

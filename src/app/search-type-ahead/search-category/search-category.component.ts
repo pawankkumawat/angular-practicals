@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { switchMap, tap } from 'rxjs/operators';
 import { District } from 'src/app/constants/constant';
 import { State } from 'src/app/models/models';
@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-search-category',
     templateUrl: './search-category.component.html',
     styleUrls: ['./search-category.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SearchCategoryComponent implements OnInit {

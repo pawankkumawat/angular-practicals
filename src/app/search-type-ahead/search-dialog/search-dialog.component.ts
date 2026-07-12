@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild, ChangeDetectionStrategy } from '@angular/core';
 import { fromEvent } from 'rxjs';
 import { debounceTime, map, switchMap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -7,6 +7,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-search-dialog',
     templateUrl: './search-dialog.component.html',
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class SearchDialogComponent implements OnInit {

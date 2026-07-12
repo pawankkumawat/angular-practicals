@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { DataService } from 'src/app/services/data.service';
@@ -8,6 +8,7 @@ import { SnackbarService } from 'src/app/services/snackbar.service';
     selector: 'app-interceptor',
     templateUrl: './interceptor.component.html',
     styles: [],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class InterceptorComponent implements OnInit {

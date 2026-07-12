@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RightsService } from 'src/app/services/rights.service';
 import { Category, Rights } from 'src/app/models/models';
@@ -8,6 +8,7 @@ import { DataService } from 'src/app/services/data.service';
     selector: 'app-group',
     templateUrl: './group.component.html',
     styleUrls: ['./group.component.scss'],
+    changeDetection: ChangeDetectionStrategy.Eager,
     standalone: false
 })
 export class GroupComponent implements OnInit {
