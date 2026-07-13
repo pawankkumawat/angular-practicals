@@ -4,6 +4,7 @@ import { NgContainerExampleComponent } from './ng-container-example/ng-container
 import { AllMaterialModule } from '../angular-material/all-material-module';
 import { NgContainerComponent } from './ng-container/ng-container.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -16,7 +17,19 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     AllMaterialModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule.forChild([
+      {
+        path: 'ngc',
+        children: [
+          {
+            path: 'example',
+            component: NgContainerExampleComponent,
+            data: { text: 'Ng Container Example' },
+          },
+        ],
+      },
+    ]),
   ],
   exports:[
     NgContainerExampleComponent,

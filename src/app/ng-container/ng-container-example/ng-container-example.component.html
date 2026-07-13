@@ -9,9 +9,9 @@
     </tr>
   </thead>
   <tbody>
-    @for (item of data; track item) {
-      <tr   >
-        @if (item.number<400) {
+    <!-- <ng-container *ngFor="let item of data">
+      <ng-container *ngIf="item.number<400">
+        <tr>
           <th class="mobile-header">Name</th>
           <td>{{item.name}}</td>
           <th class="mobile-header">Number</th>
@@ -22,8 +22,23 @@
           <td>{{item.weight}}</td>
           <th class="mobile-header">Value</th>
           <td>{{item.value}}</td>
+        </tr>
+      </ng-container>
+    </ng-container> -->
+    @for (item of data; track item) {
+    <tr>
+      @if (item.number<400) { <th class="mobile-header">Name</th>
+        <td>{{item.name}}</td>
+        <th class="mobile-header">Number</th>
+        <td>{{item.number}}</td>
+        <th class="mobile-header">Market rate</th>
+        <td>{{item.marketRate}}</td>
+        <th class="mobile-header">Weight</th>
+        <td>{{item.weight}}</td>
+        <th class="mobile-header">Value</th>
+        <td>{{item.value}}</td>
         }
-      </tr>
+    </tr>
     }
     <tr class='total'>
       <th>Total</th>

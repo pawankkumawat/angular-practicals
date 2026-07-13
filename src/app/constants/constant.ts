@@ -161,6 +161,17 @@ export const Routes = [
     name: 'Callback Hell',
     value: 'cbh',
   },
+  {
+    name: 'Ng Container',
+    text: 'Ng Container',
+    children: [
+      {
+        name: 'Ng Container Example',
+        text: 'Ng Container Example',
+        value: 'ngc/example',
+      },
+    ],
+  },
 
   {
     text: 'Search Type Ahead',

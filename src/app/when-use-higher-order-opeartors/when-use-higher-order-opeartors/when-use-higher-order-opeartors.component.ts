@@ -1,29 +1,27 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import {
-  concatMap, tap
-} from 'rxjs/operators';
-import { Blog } from 'src/app/models/models';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { rxResource } from '@angular/core/rxjs-interop';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
-    selector: 'app-when-use-higher-order-opeartors',
-    templateUrl: './when-use-higher-order-opeartors.component.html',
-    styleUrls: ['./when-use-higher-order-opeartors.component.scss'],
-    changeDetection: ChangeDetectionStrategy.Eager,
-    standalone: false
+  selector: 'app-when-use-higher-order-opeartors',
+  templateUrl: './when-use-higher-order-opeartors.component.html',
+  styleUrls: ['./when-use-higher-order-opeartors.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: false,
 })
-export class WhenUseHigherOrderOpeartorsComponent implements OnInit {
-  constructor(private service: DataService) {}
+export class WhenUseHigherOrderOpeartorsComponent {
 
-  blog!: Blog;
 
-  ngOnInit(): void {
-    this.service
-      .getUser()
-      .pipe(
-        concatMap((user) => this.service.getBlogById(user.id)),
-        tap((blog) => this.blog = blog)
-      )
-      .subscribe();
-  }
+  // constructor(private service: DataService) {}
+
+  // data$!: Observable<User>;
+
+  // ngOnInit(): void {
+  //   this.data$ = this.service.getUser();
+  // }
+  private readonly service = inject(DataService);
+
+  user = rxResource({
+    stream: () => this.service.getUser(),
+  });
 }
